@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>远芳</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yuanfang.tech/"/>
+  <updated>2019-07-22T13:53:47.743Z</updated>
+  <id>https://yuanfang.tech/</id>
+  
+  <author>
+    <name>Mengfei Liu</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my first blog</title>
+    <link href="https://yuanfang.tech/2019/07/22/my-first.html"/>
+    <id>https://yuanfang.tech/2019/07/22/my-first.html</id>
+    <published>2019-07-22T13:16:19.000Z</published>
+    <updated>2019-07-22T13:53:47.743Z</updated>
+    
+    <content type="html"><![CDATA[<p></p><p class="description"></p><br><img src="../image/first.jpg" alt style="width:100%"><p></p><a id="more"></a><p>经过两天的搭建，终于好像搭好了！node+git+hexo然后扔GitHub然后买了个域名。编辑md软件用的Typora，蛮好用。</p><p>域名yuanfang.tech，既有远方，又有远芳的意思，还可以记成元芳，很好记23333（自己名字的域名也太贵了）。本来还想起个英文的，但算了，中文更写意。tech很有dalao的感觉。</p><p>就先这样，日后完善。</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;img src=&quot;../image/first.jpg&quot; alt style=&quot;width:100%&quot;&gt;&lt;p&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="test" scheme="https://yuanfang.tech/tags/test/"/>
+    
+  </entry>
+  
+</feed>
