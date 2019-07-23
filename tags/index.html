@@ -258,6 +258,10 @@
       </a>
     </div>
     
+      
+        <p class="site-subtitle">算法小亭</p>
+      
+    
   </div>
 
   <div class="site-nav-toggle">
@@ -307,23 +311,6 @@
     
 
     <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-futbol-o"></i> <br>关于</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-reading">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/reading/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>读书/观影</a>
 
   </li>
         
@@ -436,9 +423,6 @@
             
 
     
-    
-      
-      
     
       
       
@@ -1226,15 +1210,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "mtpW2sIlIHeJQk0FGq2ddMVQ-gzGzoHsz")
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "TmB8yrbyA3wMuz99G2TVNC34-gzGzoHsz")
         .done(function ({ api_server }) {
           var Counter = function (method, url, data) {
             return $.ajax({
               method: method,
               url: `https://${api_server}/1.1${url}`,
               headers: {
-                'X-LC-Id': "mtpW2sIlIHeJQk0FGq2ddMVQ-gzGzoHsz",
-                'X-LC-Key': "S8VWUb1LK61DctReez2JM8P1",
+                'X-LC-Id': "TmB8yrbyA3wMuz99G2TVNC34-gzGzoHsz",
+                'X-LC-Key': "D5zUW7zlsdJtSlcNYRr7Q1gD",
                 'Content-Type': 'application/json',
               },
               data: data,
