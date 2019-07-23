@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuanfang.tech/"/>
-  <updated>2019-07-22T13:53:47.743Z</updated>
+  <updated>2019-07-23T08:33:50.718Z</updated>
   <id>https://yuanfang.tech/</id>
   
   <author>
@@ -17,19 +17,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>dijstra</title>
+    <link href="https://yuanfang.tech/2019/07/23/dijstra.html"/>
+    <id>https://yuanfang.tech/2019/07/23/dijstra.html</id>
+    <published>2019-07-23T06:09:13.000Z</published>
+    <updated>2019-07-23T08:33:50.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Dijstra算法"><a href="#Dijstra算法" class="headerlink" title="Dijstra算法"></a>Dijstra算法</h2><p>博客初建，先记录一个基础的单源最短路算法，Dijstra。</p><p>复杂度：O（N²）</p><p><img src="http://pv35325dx.bkt.clouddn.com/lalala.gif" alt="lalala"></p><a id="more"></a><p>例如求1到各个顶点的最短路径。</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563866213798.png" alt="1"></p><p>首先考虑图的存储问题，使用二维数组e来进行存储各个点之间的边的长度。</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563862729194.png" alt="2"></p><p>然后创建一个一维数组dis来存储1号顶点到其余各个顶点的初始路程。</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563862773804.png" alt="3"></p><p>此时dis数组中的值称为最短路程的“估计值”。</p><p>既然是找最短路，那么根据dis可以寻找到离点1最近的顶点是2。</p><p>那么dis[2]的值就变成了“确定值”。即点1到点2的最短距离就是dis[2]的值。</p><p>既然选择了2号顶点，那就继续看2号顶点的几条出边。有2-3和2-4这两条，先讨论2-3能否让1号顶点到3号顶点的路程变短，即比较dis[3]和dis[2]+e[2] [3]的大小。</p><p>dis[3]=12,dis[2]+e[2] [3]=10,dis[3]&gt;dis[2]+e[2] [3],所以可以通过1-2-3这样缩短1-3的距离，因此dis[3]更新为10。这个过程专业点称为“松弛”。</p><p>同理，dis[2]+e[2] [4]&lt;dis[4],dis[4]的值可以松弛为4。</p><p>这样2号顶点的所有出边就都松弛完了。松弛之后的dis数组为：</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563863527940.png" alt="5"></p><p>接下来以此类推，在剩下的3，4，5，6号顶点中选出离1最近的顶点。</p><p>通过dis数组可以发现最近的顶点是4。</p><p>dis[4]的值变成“确定值”。</p><p>然后继续对4号顶点的所有出边进行松弛。松弛之后的dis数组为：</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563863664903.png" alt="6"></p><p>以此类推，在剩下的3，5，6号顶点中，选出离1号最近的顶点。这次选择3号顶点。</p><p>dis[3]的值变成“确定值”。</p><p>对3号顶点的所有出边进行松弛。松弛之后的dis数组为：</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563863742582.png" alt="7"></p><p>在剩下的5，6号顶点中，选出离1号最近的顶点。选择5号。</p><p>dis[5]的值变成“确定值”。</p><p>对5号顶点的所有出边进行松弛。松弛之后的dis数组为：</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563863819140.png" alt="8"></p><p>最后选择6号。</p><p>dis[6]的值变成“确定值”。</p><p>最后对6号顶点的所有出边进行松弛。因为此例6号没有出边，因此不用处理。</p><p>至此，dis数组中所有的值都已经从“估计值”变成了“确定值”。</p><p>最终dis数组如下，这便是1号顶点到各个顶点的最短路径。</p><p><img src="http://pv35325dx.bkt.clouddn.com/1563863951516.png" alt="10"></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>算法基本思想：每次都找离源点最近的顶点，然后以该顶点为中心进行扩展，最终得到源点到其余所有点的最短路径。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 101 <span class="comment">//最大顶点数 </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> e[MAXN][MAXN],dis[MAXN];</span><br><span class="line"><span class="keyword">int</span> temp,v,i,j,a,b,c,n,m,min;</span><br><span class="line"><span class="keyword">int</span> inf=<span class="number">99999999</span>;<span class="comment">//存储一个认为正无穷的值</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="comment">//n个顶点，m条边</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line"><span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> e[i][j]=inf;</span><br><span class="line"><span class="comment">//初始化 </span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">e[a][b]=c;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">//读入边</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line"><span class="comment">//初始化dis数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> book[MAXN];<span class="comment">//在代码中，需要用一个book数组进行标记估计值还是确定值</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)book[i]=<span class="number">0</span>;</span><br><span class="line">book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Dijstra算法核心语句</span></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++)</span><br><span class="line">&#123;</span><br><span class="line">min=inf;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(book[j]==<span class="number">0</span> &amp;&amp; dis[j]&lt;min)</span><br><span class="line">&#123;</span><br><span class="line">min=dis[j];</span><br><span class="line">temp=j;<span class="comment">//记录最小的顶点号 </span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">book[temp]=<span class="number">1</span>;<span class="comment">//dis[temp]变成确定值</span></span><br><span class="line"><span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(e[temp][v]&lt;inf)<span class="comment">//进行松弛 </span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(dis[temp]+e[temp][v]&lt;dis[v])</span><br><span class="line">dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d "</span>,dis[i]);<span class="comment">//输出结果 </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Dijstra算法&quot;&gt;&lt;a href=&quot;#Dijstra算法&quot; class=&quot;headerlink&quot; title=&quot;Dijstra算法&quot;&gt;&lt;/a&gt;Dijstra算法&lt;/h2&gt;&lt;p&gt;博客初建，先记录一个基础的单源最短路算法，Dijstra。&lt;/p&gt;
+&lt;p&gt;复杂度：O（N²）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pv35325dx.bkt.clouddn.com/lalala.gif&quot; alt=&quot;lalala&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://yuanfang.tech/categories/algorithm/"/>
+    
+    
+      <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
+    
+  </entry>
+  
+  <entry>
     <title>my first blog</title>
     <link href="https://yuanfang.tech/2019/07/22/my-first.html"/>
     <id>https://yuanfang.tech/2019/07/22/my-first.html</id>
     <published>2019-07-22T13:16:19.000Z</published>
-    <updated>2019-07-22T13:53:47.743Z</updated>
+    <updated>2019-07-23T08:34:29.179Z</updated>
     
-    <content type="html"><![CDATA[<p></p><p class="description"></p><br><img src="../image/first.jpg" alt style="width:100%"><p></p><a id="more"></a><p>经过两天的搭建，终于好像搭好了！node+git+hexo然后扔GitHub然后买了个域名。编辑md软件用的Typora，蛮好用。</p><p>域名yuanfang.tech，既有远方，又有远芳的意思，还可以记成元芳，很好记23333（自己名字的域名也太贵了）。本来还想起个英文的，但算了，中文更写意。tech很有dalao的感觉。</p><p>就先这样，日后完善。</p><hr>]]></content>
+    <content type="html"><![CDATA[<p></p><p class="description"></p><br><img src="http://pv35325dx.bkt.clouddn.com/first.jpg" alt="first"><p></p><a id="more"></a><p>经过两天的搭建，终于好像搭好了！node+git+hexo然后扔GitHub然后买了个域名。编辑md软件用的Typora，蛮好用。</p><p>域名yuanfang.tech，既有远方，又有远芳的意思，还可以记成元芳，很好记23333（自己名字的域名也太贵了）。本来还想起个英文的，但算了，中文更写意。tech很有dalao的感觉。</p><p>就先这样，日后完善。</p><hr>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;img src=&quot;../image/first.jpg&quot; alt style=&quot;width:100%&quot;&gt;&lt;p&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;&lt;img src=&quot;http://pv35325dx.bkt.clouddn.com/first.jpg&quot; alt=&quot;first&quot;&gt;&lt;p&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="somethings" scheme="https://yuanfang.tech/categories/somethings/"/>
     
     
       <category term="test" scheme="https://yuanfang.tech/tags/test/"/>

@@ -164,17 +164,28 @@
 
 
 
-  <meta name="description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="gallery">
-<meta property="og:url" content="https://yuanfang.tech/gallery/index.html">
+  <meta name="description" content="Dijstra算法博客初建，先记录一个基础的单源最短路算法，Dijstra。 复杂度：O（N²）">
+<meta name="keywords" content="dijstra">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dijstra">
+<meta property="og:url" content="https://yuanfang.tech/2019/07/23/dijstra.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
+<meta property="og:description" content="Dijstra算法博客初建，先记录一个基础的单源最短路算法，Dijstra。 复杂度：O（N²）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-21T05:54:17.000Z">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/lalala.gif">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563866213798.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563862729194.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563862773804.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563863527940.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563863664903.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563863742582.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563863819140.png">
+<meta property="og:image" content="http://pv35325dx.bkt.clouddn.com/1563863951516.png">
+<meta property="og:updated_time" content="2019-07-23T08:33:50.718Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="gallery">
-<meta name="twitter:description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
+<meta name="twitter:title" content="dijstra">
+<meta name="twitter:description" content="Dijstra算法博客初建，先记录一个基础的单源最短路算法，Dijstra。 复杂度：O（N²）">
+<meta name="twitter:image" content="http://pv35325dx.bkt.clouddn.com/lalala.gif">
 
 
 
@@ -183,7 +194,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/gallery/">
+  <link rel="canonical" href="https://yuanfang.tech/2019/07/23/dijstra.html">
 
 
 
@@ -193,7 +204,7 @@
   };
 </script>
 
-  <title>gallery | 远芳</title>
+  <title>dijstra | 远芳</title>
   
 
 
@@ -435,74 +446,288 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/23/dijstra.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mengfei Liu">
+      <meta itemprop="description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。<br>如今香气很淡，你人很远，车水马龙渐感无言。">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远芳">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">gallery</h1>
+        
+        
+          <h1 class="post-title" itemprop="name headline">dijstra
+              
+            
+          </h1>
+        
 
-<div class="post-meta">
-  
-  
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2019-07-23 14:09:13 / 修改时间：16:33:50" itemprop="dateCreated datePublished" datetime="2019-07-23T14:09:13+08:00">2019-07-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/23/dijstra.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/23/dijstra.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/23/dijstra.html" class="leancloud_visitors" data-flag-title="dijstra">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Dijstra算法"><a href="#Dijstra算法" class="headerlink" title="Dijstra算法"></a>Dijstra算法</h2><p>博客初建，先记录一个基础的单源最短路算法，Dijstra。</p>
+<p>复杂度：O（N²）</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/lalala.gif" alt="lalala"></p>
+<a id="more"></a>
+<p>例如求1到各个顶点的最短路径。</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563866213798.png" alt="1"></p>
+<p>首先考虑图的存储问题，使用二维数组e来进行存储各个点之间的边的长度。</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563862729194.png" alt="2"></p>
+<p>然后创建一个一维数组dis来存储1号顶点到其余各个顶点的初始路程。</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563862773804.png" alt="3"></p>
+<p>此时dis数组中的值称为最短路程的“估计值”。</p>
+<p>既然是找最短路，那么根据dis可以寻找到离点1最近的顶点是2。</p>
+<p>那么dis[2]的值就变成了“确定值”。即点1到点2的最短距离就是dis[2]的值。</p>
+<p>既然选择了2号顶点，那就继续看2号顶点的几条出边。有2-3和2-4这两条，先讨论2-3能否让1号顶点到3号顶点的路程变短，即比较dis[3]和dis[2]+e[2] [3]的大小。</p>
+<p>dis[3]=12,dis[2]+e[2] [3]=10,dis[3]&gt;dis[2]+e[2] [3],所以可以通过1-2-3这样缩短1-3的距离，因此dis[3]更新为10。这个过程专业点称为“松弛”。</p>
+<p>同理，dis[2]+e[2] [4]&lt;dis[4],dis[4]的值可以松弛为4。</p>
+<p>这样2号顶点的所有出边就都松弛完了。松弛之后的dis数组为：</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563863527940.png" alt="5"></p>
+<p>接下来以此类推，在剩下的3，4，5，6号顶点中选出离1最近的顶点。</p>
+<p>通过dis数组可以发现最近的顶点是4。</p>
+<p>dis[4]的值变成“确定值”。</p>
+<p>然后继续对4号顶点的所有出边进行松弛。松弛之后的dis数组为：</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563863664903.png" alt="6"></p>
+<p>以此类推，在剩下的3，5，6号顶点中，选出离1号最近的顶点。这次选择3号顶点。</p>
+<p>dis[3]的值变成“确定值”。</p>
+<p>对3号顶点的所有出边进行松弛。松弛之后的dis数组为：</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563863742582.png" alt="7"></p>
+<p>在剩下的5，6号顶点中，选出离1号最近的顶点。选择5号。</p>
+<p>dis[5]的值变成“确定值”。</p>
+<p>对5号顶点的所有出边进行松弛。松弛之后的dis数组为：</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563863819140.png" alt="8"></p>
+<p>最后选择6号。</p>
+<p>dis[6]的值变成“确定值”。</p>
+<p>最后对6号顶点的所有出边进行松弛。因为此例6号没有出边，因此不用处理。</p>
+<p>至此，dis数组中所有的值都已经从“估计值”变成了“确定值”。</p>
+<p>最终dis数组如下，这便是1号顶点到各个顶点的最短路径。</p>
+<p><img src="http://pv35325dx.bkt.clouddn.com/1563863951516.png" alt="10"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>算法基本思想：每次都找离源点最近的顶点，然后以该顶点为中心进行扩展，最终得到源点到其余所有点的最短路径。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 101 <span class="comment">//最大顶点数 </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> e[MAXN][MAXN],dis[MAXN];</span><br><span class="line">	<span class="keyword">int</span> temp,v,i,j,a,b,c,n,m,min;</span><br><span class="line">	<span class="keyword">int</span> inf=<span class="number">99999999</span>;<span class="comment">//存储一个认为正无穷的值</span></span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);<span class="comment">//n个顶点，m条边</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			<span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span> e[i][j]=inf;</span><br><span class="line">	<span class="comment">//初始化 </span></span><br><span class="line">	 </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		e[a][b]=c;</span><br><span class="line">	&#125; </span><br><span class="line">	<span class="comment">//读入边</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line">	<span class="comment">//初始化dis数组</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> book[MAXN];<span class="comment">//在代码中，需要用一个book数组进行标记估计值还是确定值</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)book[i]=<span class="number">0</span>;</span><br><span class="line">	book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Dijstra算法核心语句</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		min=inf;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(book[j]==<span class="number">0</span> &amp;&amp; dis[j]&lt;min)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;<span class="comment">//记录最小的顶点号 </span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;<span class="comment">//dis[temp]变成确定值</span></span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)<span class="comment">//进行松弛 </span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[temp]+e[temp][v]&lt;dis[v])</span><br><span class="line">					dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,dis[i]);<span class="comment">//输出结果 </span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
 </div>
 
-</header>
+      
+    </div>
 
-      
-      
-      
-      <div class="post-body">
-        
-        
+    
+
+    
+    
+    
+
+    <div>
           
-        
-      </div>
-      
-      
-      
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/23/dijstra.html">dijstra</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
+  <p><span>发布时间:</span>2019年07月23日 - 14:09</p>
+  <p><span>最后更新:</span>2019年07月23日 - 16:33</p>
+  <p><span>原始链接:</span><a href="/2019/07/23/dijstra.html" title="dijstra">https://yuanfang.tech/2019/07/23/dijstra.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/23/dijstra.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+  });
+    });  
+</script>
+
+          
     </div>
     
 
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dijstra/" rel="tag"><i class="fa fa-tag"></i>dijstra</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/22/my-first.html" rel="next" title="my first blog">
+                my first blog <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    
-    
-    
   </div>
 
 
@@ -536,8 +761,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -635,6 +869,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dijstra算法"><span class="nav-number">1.</span> <span class="nav-text">Dijstra算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1176,43 +1426,37 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1232,9 +1476,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
