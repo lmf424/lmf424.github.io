@@ -173,7 +173,7 @@
 <meta property="og:description" content="poj2253,最短路变形">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yuanfang.tech/2019/07/24/poj2253/2253.png">
-<meta property="og:updated_time" content="2019-07-24T12:51:40.708Z">
+<meta property="og:updated_time" content="2019-07-24T17:50:05.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poj2253">
 <meta name="twitter:description" content="poj2253,最短路变形">
@@ -491,12 +491,24 @@
                 
               
 
-              <time title="创建时间：2019-07-24 17:42:08 / 修改时间：20:51:40" itemprop="dateCreated datePublished" datetime="2019-07-24T17:42:08+08:00">2019-07-24</time>
+              <time title="创建时间：2019-07-24 17:42:08" itemprop="dateCreated datePublished" datetime="2019-07-24T17:42:08+08:00">2019-07-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-25 01:50:05" itemprop="dateModified" datetime="2019-07-25T01:50:05+08:00">2019-07-25</time>
               
             
           </span>
@@ -579,7 +591,7 @@
 <h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>输出有俩\n</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Dijstra改一改：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">funmin</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;b)<span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">funmax</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;b)<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,count=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> x[<span class="number">210</span>],y[<span class="number">210</span>],book[<span class="number">210</span>];</span><br><span class="line">	<span class="keyword">double</span> e[<span class="number">210</span>][<span class="number">210</span>],dis[<span class="number">210</span>];</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t!=<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=t;i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x[i],&amp;y[i]);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=t;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=t;j++)</span><br><span class="line">			e[i][j]=inf;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;t;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=i+<span class="number">1</span>;j&lt;=t;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			e[i][j]=e[j][i]=<span class="built_in">sqrt</span>(<span class="keyword">double</span>(x[i]-x[j])*(x[i]-x[j])+<span class="keyword">double</span>(y[i]-y[j])*(y[i]-y[j]));</span><br><span class="line">		&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=t;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line">			book[i]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	dis[<span class="number">1</span>]=<span class="number">0</span>;book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;t;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">double</span> min=inf;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=t;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j]&lt;min&amp;&amp;book[j]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> v;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=t;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)</span><br><span class="line">			&#123;</span><br><span class="line">				dis[v]=funmin(dis[v],funmax(e[temp][v],dis[temp]));<span class="comment">//比较经过temp点松弛后的路线中最长跳跃距离和dis[v]的距离</span></span><br><span class="line">				<span class="comment">//if(e[temp][v]+dis[temp]&lt;dis[v])dis[v]=dis[temp]+e[temp][v];</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Scenario #%d\nFrog Distance = %.3lf\n\n"</span>,count++,dis[<span class="number">2</span>]);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<hr>
       
     </div>
     <div>
@@ -611,7 +623,7 @@
   <p><span>本文标题:</span><a href="/2019/07/24/poj2253.html">poj2253</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
   <p><span>发布时间:</span>2019年07月24日 - 17:42</p>
-  <p><span>最后更新:</span>2019年07月24日 - 20:51</p>
+  <p><span>最后更新:</span>2019年07月25日 - 01:50</p>
   <p><span>原始链接:</span><a href="/2019/07/24/poj2253.html" title="poj2253">https://yuanfang.tech/2019/07/24/poj2253.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/24/poj2253.html" aria-label="复制成功！"></i></span>
   </p>
@@ -752,7 +764,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
