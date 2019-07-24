@@ -164,18 +164,18 @@
 
 
 
-  <meta name="description" content="板子题，最短路，poj2387">
+  <meta name="description" content="poj1797,最短路变形">
 <meta name="keywords" content="dijstra,poj，kuangbin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj2387">
-<meta property="og:url" content="https://yuanfang.tech/2019/07/24/poj2387.html">
+<meta property="og:title" content="poj1797">
+<meta property="og:url" content="https://yuanfang.tech/2019/07/24/poj1797.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="板子题，最短路，poj2387">
+<meta property="og:description" content="poj1797,最短路变形">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T08:26:32.103Z">
+<meta property="og:updated_time" content="2019-07-24T12:08:39.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj2387">
-<meta name="twitter:description" content="板子题，最短路，poj2387">
+<meta name="twitter:title" content="poj1797">
+<meta name="twitter:description" content="poj1797,最短路变形">
 
 
 
@@ -184,7 +184,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/2019/07/24/poj2387.html">
+  <link rel="canonical" href="https://yuanfang.tech/2019/07/24/poj1797.html">
 
 
 
@@ -194,7 +194,7 @@
   };
 </script>
 
-  <title>poj2387 | 远芳</title>
+  <title>poj1797 | 远芳</title>
   
 
 
@@ -447,7 +447,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/24/poj2387.html">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/24/poj1797.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mengfei Liu">
@@ -464,7 +464,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">poj2387
+          <h1 class="post-title" itemprop="name headline">poj1797
               
             
           </h1>
@@ -489,7 +489,7 @@
                 
               
 
-              <time title="创建时间：2019-07-24 16:15:07 / 修改时间：16:26:32" itemprop="dateCreated datePublished" datetime="2019-07-24T16:15:07+08:00">2019-07-24</time>
+              <time title="创建时间：2019-07-24 20:00:23 / 修改时间：20:08:39" itemprop="dateCreated datePublished" datetime="2019-07-24T20:00:23+08:00">2019-07-24</time>
             
 
             
@@ -526,8 +526,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/24/poj2387.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/24/poj2387.html" itemprop="commentCount"></span>
+                <a href="/2019/07/24/poj1797.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/24/poj1797.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -535,7 +535,7 @@
 
           
           
-             <span id="/2019/07/24/poj2387.html" class="leancloud_visitors" data-flag-title="poj2387">
+             <span id="/2019/07/24/poj1797.html" class="leancloud_visitors" data-flag-title="poj1797">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -566,16 +566,17 @@
       
 
       
-        <p></p><p class="description"></p><br>板子题，最短路，poj2387<p></p>
+        <p></p><p class="description"></p><br>poj1797,最短路变形<p></p>
 <a id="more"></a>
-<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=2387" target="_blank" rel="noopener">http://poj.org/problem?id=2387</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>第一行T组数据，N个顶点</p>
-<p>之后T行告诉你a到b的距离c</p>
-<p>求到n的最短路径</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>有重边 \ \两点之间的路未必只有一条</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Dijstra：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">1010</span>][<span class="number">1010</span>],dis[<span class="number">1010</span>],book[<span class="number">1010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,t,a,b,c,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;t,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span> e[i][j]=inf; </span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		<span class="keyword">if</span>(e[a][b]&gt;c)</span><br><span class="line">		&#123;</span><br><span class="line">			e[a][b]=c;</span><br><span class="line">			e[b][a]=c;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line">		book[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	dis[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> min=inf;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j]&lt;min&amp;&amp;book[j]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> v;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[v]&gt;dis[temp]+e[temp][v])dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,dis[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=1797" target="_blank" rel="noopener">http://poj.org/problem?id=1797</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>青蛙那题的变形版本。</p>
+<p>输入T组，每组x个点，y条边。</p>
+<p>接下来y行分别是a到b的边的权重。</p>
+<p>求1到x的所有边中最大的最小边权重。（2333读懂题目就会了）</p>
+<p>形象一点理解就是权重为道路的载重量，这题求的就是一辆卡车从1开到x，卡车最多可以载重多少。当然取决于一条路上载重量最低的那条路。输出那条路的载重量。</p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>思路：反过来查找dis[]中最大的，那么就能确定1到那个点的最大权重了，然后进行。。松弛？</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Dijstra变形：一开始读错题了导致代码写丑了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">funmin</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;b)<span class="keyword">return</span> b;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">funmax</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a&gt;b)<span class="keyword">return</span> a;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">1010</span>][<span class="number">1010</span>],book[<span class="number">1010</span>],dis[<span class="number">1010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,count=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> i,j,x,y,a,b,c;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;x,&amp;y);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=x;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=x;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line">				e[i][j]=-inf;</span><br><span class="line">			&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(y--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		e[a][b]=c;</span><br><span class="line">		e[b][a]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=x;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line">			book[i]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	dis[<span class="number">1</span>]=<span class="number">0</span>;book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;x;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> max=-inf;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">2</span>;j&lt;=x;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j]&gt;max&amp;&amp;book[j]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				max=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> v;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">2</span>;v&lt;=x;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&gt;<span class="number">0</span>&amp;&amp;book[v]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				dis[v]=funmax(dis[v],funmin(e[temp][v],dis[temp]));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Scenario #%d:\n%d\n\n"</span>,count++,dis[x]);</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -605,12 +606,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/07/24/poj2387.html">poj2387</a></p>
+  <p><span>本文标题:</span><a href="/2019/07/24/poj1797.html">poj1797</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
-  <p><span>发布时间:</span>2019年07月24日 - 16:15</p>
-  <p><span>最后更新:</span>2019年07月24日 - 16:26</p>
-  <p><span>原始链接:</span><a href="/2019/07/24/poj2387.html" title="poj2387">https://yuanfang.tech/2019/07/24/poj2387.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/24/poj2387.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年07月24日 - 20:00</p>
+  <p><span>最后更新:</span>2019年07月24日 - 20:08</p>
+  <p><span>原始链接:</span><a href="/2019/07/24/poj1797.html" title="poj1797">https://yuanfang.tech/2019/07/24/poj1797.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/24/poj1797.html" aria-label="复制成功！"></i></span>
   </p>
 </div>
 <script> 
@@ -657,18 +658,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/poj2253.html" rel="prev" title="poj2253">
-                 <i class="fa fa-chevron-left"></i> poj2253
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/23/dijstra.html" rel="next" title="dijstra">
-                dijstra <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/24/poj2253.html" rel="next" title="poj2253">
+                poj2253 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
