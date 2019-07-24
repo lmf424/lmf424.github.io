@@ -174,8 +174,6 @@
 <meta name="twitter:title" content="文章分类">
 
 
-  
-
 
   <link rel="alternate" href="/atom.xml" title="远芳" type="application/atom+xml">
 
@@ -1223,15 +1221,15 @@
     
 
     $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + "TTwQYhLqFxtSmyfxTmBoIQHl-gzGzoHsz")
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "5YAGJx33tY9WIp0ASqsf2L7A-gzGzoHsz")
         .done(function ({ api_server }) {
           var Counter = function (method, url, data) {
             return $.ajax({
               method: method,
               url: `https://${api_server}/1.1${url}`,
               headers: {
-                'X-LC-Id': "TTwQYhLqFxtSmyfxTmBoIQHl-gzGzoHsz",
-                'X-LC-Key': "PMrukI2XNyAOzQrCBWHrNQCS",
+                'X-LC-Id': "5YAGJx33tY9WIp0ASqsf2L7A-gzGzoHsz",
+                'X-LC-Key': "aXl7RjjmYJi0QfSdpNqiop6o",
                 'Content-Type': 'application/json',
               },
               data: data,
