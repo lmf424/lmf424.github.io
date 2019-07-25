@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuanfang.tech/"/>
-  <updated>2019-07-24T17:48:58.479Z</updated>
+  <updated>2019-07-25T11:10:01.920Z</updated>
   <id>https://yuanfang.tech/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>floyd</title>
+    <link href="https://yuanfang.tech/2019/07/25/floyd.html"/>
+    <id>https://yuanfang.tech/2019/07/25/floyd.html</id>
+    <published>2019-07-25T10:34:24.000Z</published>
+    <updated>2019-07-25T11:10:01.920Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><p></p><h2 id="Floyed算法"><a href="#Floyed算法" class="headerlink" title="Floyed算法"></a>Floyed算法</h2><p>复杂度：O（n^3）</p><p>poj又又又又炸了。写一下Floyd吧。核心代码五行，很简单。</p><p>求一张图内任意两点间的距离。</p><p><img src="http://pv35325dx.bkt.clouddn.com/guahua.gif" alt="=w="></p><a id="more"></a><p>例如：求任意两个点的最短路程。</p><p><img src="floyd\1564051171338.png" alt="1564051171338"></p><p>用矩阵存储图。</p><p><img src="floyd\1564051237886.png" alt="1564051237886"></p><p>首先我们知道两个点之间的距离了，接下来可以思考，有没有办法通过第三个点来进行中转来缩短路程呢？</p><p>因此我们可以假设现在只允许通过1号点进行中转，来进行尝试缩短路程。</p><p>只需要判断e[i] [1]+e[1] [j]是否比e[i] [j]小即可。</p><p>代码如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j])</span><br><span class="line">e[i][j]=e[i][<span class="number">1</span>]+e[<span class="number">1</span>][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在只允许通过1号顶点的情况下，任意两点间的最短路径更新为：</p><p><img src="floyd\1564052208614.png" alt="1564052208614"></p><p>以此类推，然后考虑只允许通过2号点进行中转。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(e[i][j]&gt;e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j])</span><br><span class="line">e[i][j]=e[i][<span class="number">2</span>]+e[<span class="number">2</span>][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>几乎一毛一样，1变成2。</p><p>更新：</p><p><img src="floyd\1564052291135.png" alt="1564052291135"></p><p>通过3号点中转更新：</p><p><img src="floyd\1564052336765.png" alt="1564052336765"></p><p>通过4号点中转更新：</p><p><img src="floyd\1564052379218.png" alt="1564052379218"></p><p>更新完毕。上图即为任意两点间最终的最短路程。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>简单来说就是遍历通过1-n个点的中转来缩短最短路程。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(e[i][j]&gt;e[i][k]+e[k][j])</span><br><span class="line">e[i][j]=e[i][k]+e[k][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Floyed算法&quot;&gt;&lt;a href=&quot;#Floyed算法&quot; class=&quot;headerlink&quot; title=&quot;Floyed算法&quot;&gt;&lt;/a&gt;Floyed算法&lt;/h2&gt;&lt;p&gt;复杂度：O（n^3）&lt;/p&gt;
+&lt;p&gt;poj又又又又炸了。写一下Floyd吧。核心代码五行，很简单。&lt;/p&gt;
+&lt;p&gt;求一张图内任意两点间的距离。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://pv35325dx.bkt.clouddn.com/guahua.gif&quot; alt=&quot;=w=&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://yuanfang.tech/categories/algorithm/"/>
+    
+    
+      <category term="floyd" scheme="https://yuanfang.tech/tags/floyd/"/>
+    
+  </entry>
   
   <entry>
     <title>poj3268</title>
