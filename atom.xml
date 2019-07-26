@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuanfang.tech/"/>
-  <updated>2019-07-25T11:10:01.920Z</updated>
+  <updated>2019-07-26T08:08:38.168Z</updated>
   <id>https://yuanfang.tech/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bellman</title>
+    <link href="https://yuanfang.tech/2019/07/26/bellman.html"/>
+    <id>https://yuanfang.tech/2019/07/26/bellman.html</id>
+    <published>2019-07-26T06:56:16.000Z</published>
+    <updated>2019-07-26T08:08:38.168Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="Bellman算法"><a href="#Bellman算法" class="headerlink" title="Bellman算法"></a>Bellman算法</h2><p>Dijstra只能求没有负权边的图，因为当所有边权为正时，不会存在一个路程更短的没有拓展过的点，所以这个点的路程永远不会再改变，从而保证了dijstra的正确性。</p><p>那么有没有一个算法可以求带有负权边的指定顶点到其余各个顶点的最短路径算法呢？</p><p>那就到Bellman-Ford出场了。</p><p>复杂度：O(NM)</p><p>优化后：&lt;=O(NM)</p><a id="more"></a><p>求1号顶点到其余所有顶点的最短路径。</p><p><img src="bellman\1564125629485.png" alt="1564125629485"></p><p>依旧用dis[]存储1号顶点到所有顶点的距离。</p><p><img src="bellman\1564125848909.png" alt="1564125848909"></p><p>接下来根据边给出的顺序，先处理第一条边2-3  2。</p><p>通过2-3这条边进行松弛。即判断dis[3]是否大于dis[2]+2。此时dis[3]是∞，dis[2]也是∞，那么dis[3]&lt;dis[2]+2。所以通过2-3-2不能是dis[3]的值变小，松弛失败。</p><p>继续处理第二条边1-2  -3。</p><p>发现dis[2]&gt;dis[1]+(-3)，通过这条边可以使dis[2]的值从∞变成-3。因此松弛成功。</p><p>以此类推，用同样的方法处理剩下的每一条边。对所有的边松弛一便后的结果如下：</p><p><img src="bellman\1564126314876.png" alt="1564126314876"></p><p>可以发现，1-2和1-5的距离变短了。我们再对所有边进行一轮松弛操作。</p><p><img src="bellman\1564126386305.png" alt="1564126386305"></p><p>如果说floyd是每次只能经过一个点中转来求到达其余个点的最短路径长度，那bellman就是每次只能经过一条边来求到达其余个点的最短路径长度。</p><p>如果进行k轮的话，那么就是从1号顶点最多经过k条边到达其余各顶点的最短路径长度。</p><p>因为再含有n个顶点的图中，任意两点间的最短路径最多包含n-1条边。</p><p>所以最多只需要进行n-1轮松弛即可求出最短路径。</p><p>另外，最短路径可能包含回路。</p><p>回路分为正权回路和负权回路。</p><p>如果包含正权回路，那么去掉正权回路之后一定能找到更短的路径。</p><p>如果包含负权回路，那么肯定没有最短路径。因为每多走一次负权回路就可以得到更短的路径。</p><p>继续</p><p><img src="bellman\1564127047514.png" alt="1564127047514"></p><p>完工！</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对所有的边进行n-1次松弛操作。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line"><span class="keyword">if</span>(dis[v[i]]&gt;dis[u[i]]+w[i])</span><br><span class="line">dis[v[i]]=dis[u[i]]+w[i];</span><br></pre></td></tr></table></figure><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>待施工~~~</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Bellman算法&quot;&gt;&lt;a href=&quot;#Bellman算法&quot; class=&quot;headerlink&quot; title=&quot;Bellman算法&quot;&gt;&lt;/a&gt;Bellman算法&lt;/h2&gt;&lt;p&gt;Dijstra只能求没有负权边的图，因为当所有边权为正时，不会存在一个路程更短的没有拓展过的点，所以这个点的路程永远不会再改变，从而保证了dijstra的正确性。&lt;/p&gt;
+&lt;p&gt;那么有没有一个算法可以求带有负权边的指定顶点到其余各个顶点的最短路径算法呢？&lt;/p&gt;
+&lt;p&gt;那就到Bellman-Ford出场了。&lt;/p&gt;
+&lt;p&gt;复杂度：O(NM)&lt;/p&gt;
+&lt;p&gt;优化后：&amp;lt;=O(NM)&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://yuanfang.tech/categories/algorithm/"/>
+    
+    
+      <category term="bellman" scheme="https://yuanfang.tech/tags/bellman/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>poj1860</title>
+    <link href="https://yuanfang.tech/2019/07/26/poj1860.html"/>
+    <id>https://yuanfang.tech/2019/07/26/poj1860.html</id>
+    <published>2019-07-26T06:48:25.000Z</published>
+    <updated>2019-07-26T06:55:47.128Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><br>poj1860，求图正环<p></p><a id="more"></a><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=1860" target="_blank" rel="noopener">http://poj.org/problem?id=1860</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有多种汇币，汇币之间可以交换，这需要手续费，当你用100A币交换B币时，A到B的汇率是29.75，手续费是0.39，那么你可以得到(100 - 0.39) * 29.75 = 2963.3975 B币。问s币的金额经过交换最终得到的s币金额数能否增加。</p><p>输入：</p><p>第一行，N种货币，M个交换所，你手上拥有的货币种类s，你手上拥有的money；</p><p>接下来m行，a币，b币，a到b的汇率，a到b的手续费，b到a的汇率，b到a的手续费。</p><h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>bellman算法求正环，只需要按所有边都松弛一边之后然后进行判断能否再次松弛即可。能继续松弛即为有正环。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> u[<span class="number">220</span>],v[<span class="number">220</span>];</span><br><span class="line"><span class="keyword">double</span> dis[<span class="number">110</span>],wl[<span class="number">220</span>],ws[<span class="number">220</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,s,i;</span><br><span class="line"><span class="keyword">double</span> money;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d%d%lf"</span>,&amp;n,&amp;m,&amp;s,&amp;money);</span><br><span class="line">i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> k=m;</span><br><span class="line"><span class="keyword">while</span>(m--)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line"><span class="keyword">double</span> al,as,bl,bs;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d%lf%lf%lf%lf"</span>,&amp;a,&amp;b,&amp;al,&amp;as,&amp;bl,&amp;bs);</span><br><span class="line">u[i]=a;v[i]=b;wl[i]=al;ws[i]=as;</span><br><span class="line">i++;</span><br><span class="line">u[i]=b;v[i]=a;wl[i]=bl;ws[i]=bs;</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> t,j;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(t=<span class="number">0</span>;t&lt;=n;t++)</span><br><span class="line">&#123;</span><br><span class="line">dis[t]=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">dis[s]=money;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(t=<span class="number">1</span>;t&lt;=k;t++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(dis[v[j]]&lt;(dis[u[j]]-ws[j])*wl[j])</span><br><span class="line">dis[v[j]]=(dis[u[j]]-ws[j])*wl[j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;i;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(dis[v[j]]&lt;(dis[u[j]]-ws[j])*wl[j])</span><br><span class="line">&#123;</span><br><span class="line">dis[v[j]]=(dis[u[j]]-ws[j])*wl[j];</span><br><span class="line">flag=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(flag==<span class="number">1</span>)<span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;poj1860，求图正环&lt;p&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
+    
+    
+      <category term="bellman" scheme="https://yuanfang.tech/tags/bellman/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
+    
+      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
+  </entry>
   
   <entry>
     <title>floyd</title>
