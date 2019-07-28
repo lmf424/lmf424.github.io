@@ -164,18 +164,18 @@
 
 
 
-  <meta name="description" content="poj3268,最短路变形，有向图，求来回距离">
-<meta name="keywords" content="dijstra,poj,kuangbin">
+  <meta name="description" content="pojj3660,floyd求有向图的传递闭包">
+<meta name="keywords" content="poj,kuangbin,floyd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj3268">
-<meta property="og:url" content="https://yuanfang.tech/2019/07/25/poj3268.html">
+<meta property="og:title" content="poj3660">
+<meta property="og:url" content="https://yuanfang.tech/2019/07/28/poj3660.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="poj3268,最短路变形，有向图，求来回距离">
+<meta property="og:description" content="pojj3660,floyd求有向图的传递闭包">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T17:48:58.479Z">
+<meta property="og:updated_time" content="2019-07-28T09:08:12.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj3268">
-<meta name="twitter:description" content="poj3268,最短路变形，有向图，求来回距离">
+<meta name="twitter:title" content="poj3660">
+<meta name="twitter:description" content="pojj3660,floyd求有向图的传递闭包">
 
 
 
@@ -184,7 +184,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/2019/07/25/poj3268.html">
+  <link rel="canonical" href="https://yuanfang.tech/2019/07/28/poj3660.html">
 
 
 
@@ -194,7 +194,7 @@
   };
 </script>
 
-  <title>poj3268 | 远芳</title>
+  <title>poj3660 | 远芳</title>
   
 
 
@@ -447,7 +447,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/25/poj3268.html">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/28/poj3660.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mengfei Liu">
@@ -464,7 +464,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">poj3268
+          <h1 class="post-title" itemprop="name headline">poj3660
               
             
           </h1>
@@ -489,7 +489,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 01:39:39 / 修改时间：01:48:58" itemprop="dateCreated datePublished" datetime="2019-07-25T01:39:39+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-28 17:01:49 / 修改时间：17:08:12" itemprop="dateCreated datePublished" datetime="2019-07-28T17:01:49+08:00">2019-07-28</time>
             
 
             
@@ -526,8 +526,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/25/poj3268.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/25/poj3268.html" itemprop="commentCount"></span>
+                <a href="/2019/07/28/poj3660.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/28/poj3660.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -535,7 +535,7 @@
 
           
           
-             <span id="/2019/07/25/poj3268.html" class="leancloud_visitors" data-flag-title="poj3268">
+             <span id="/2019/07/28/poj3660.html" class="leancloud_visitors" data-flag-title="poj3660">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -566,13 +566,14 @@
       
 
       
-        <p></p><p class="description"></p><br>poj3268,最短路变形，有向图，求来回距离<p></p>
+        <p></p><p class="description"></p><br>pojj3660,floyd求有向图的传递闭包<p></p>
 <a id="more"></a>
-<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=3268" target="_blank" rel="noopener">http://poj.org/problem?id=3268</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给出n个点和m条边，接着是m条边，代表从牛a到牛b需要花费c时间，现在所有牛要到牛x那里去参加聚会，并且所有牛参加聚会后还要回来，给你牛x，除了牛x之外的牛，他们都有一个参加聚会并且回来的最短时间，从这些最短时间里找出一个最大值输出。</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>首先可以想到，所有牛到X的最短距离，那么将X作为起点就可以通过dijstra知道X到其他点的距离。即返程的距离。</p>
-<p>只需要转置矩阵一下，就可以求出其他点到X的距离了。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> book[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,x;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)book[i]=<span class="number">0</span>;</span><br><span class="line">	book[x]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)dis[i]=e[x][i];</span><br><span class="line">	dis[x]=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> min=inf,temp,v;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(book[j]==<span class="number">0</span>&amp;&amp;dis[j]&lt;min)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[v]&gt;dis[temp]+e[temp][v])dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum[i]=sum[i]+dis[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;x);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			e[i][j]=inf;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		sum[i]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		e[a][b]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	dijstra();</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=i;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			temp=e[i][j];</span><br><span class="line">			e[i][j]=e[j][i];</span><br><span class="line">			e[j][i]=temp;</span><br><span class="line">		&#125;</span><br><span class="line">	dijstra();</span><br><span class="line">	<span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==x)<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(sum[i]&gt;max)max=sum[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,max);</span><br><span class="line">&#125; <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> book[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">1010</span>];</span><br><span class="line"><span class="keyword">int</span> n,m,x;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dijstra</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)book[i]=<span class="number">0</span>;</span><br><span class="line">	book[x]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)dis[i]=e[x][i];</span><br><span class="line">	dis[x]=<span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> min=inf,temp,v;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(book[j]==<span class="number">0</span>&amp;&amp;dis[j]&lt;min)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[v]&gt;dis[temp]+e[temp][v])dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		sum[i]=sum[i]+dis[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;m,&amp;x);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">			e[i][j]=inf;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		sum[i]=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		e[a][b]=c;</span><br><span class="line">	&#125;</span><br><span class="line">	dijstra();</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=i;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			temp=e[i][j];</span><br><span class="line">			e[i][j]=e[j][i];</span><br><span class="line">			e[j][i]=temp;</span><br><span class="line">		&#125;</span><br><span class="line">	dijstra();</span><br><span class="line">	<span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(i==x)<span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(sum[i]&gt;max)max=sum[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,max);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=3660" target="_blank" rel="noopener">http://poj.org/problem?id=3660</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>N头牛，给你M个两头牛的关系，即a可以打败b。</p>
+<p>问最多能确定几头牛的名次。</p>
+<p>即如果这头牛和其余的牛的关系是确定的，那么这个牛的排名就是确定的。</p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>传递闭包： 关系之间具有传递性（例如a&gt; b, b&gt; c, 那么a&gt; c）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999 </span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m,a,b;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			e[i][j]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">		e[a][b]=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">1</span>;k&lt;=n;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span>(e[i][k]&amp;&amp;e[k][j])</span><br><span class="line">						e[i][j]=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>,flag;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==j)<span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(e[i][j]==<span class="number">0</span>&amp;&amp;e[j][i]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag==<span class="number">1</span>)ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -603,12 +604,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/07/25/poj3268.html">poj3268</a></p>
+  <p><span>本文标题:</span><a href="/2019/07/28/poj3660.html">poj3660</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
-  <p><span>发布时间:</span>2019年07月25日 - 01:39</p>
-  <p><span>最后更新:</span>2019年07月25日 - 01:48</p>
-  <p><span>原始链接:</span><a href="/2019/07/25/poj3268.html" title="poj3268">https://yuanfang.tech/2019/07/25/poj3268.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/25/poj3268.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年07月28日 - 17:01</p>
+  <p><span>最后更新:</span>2019年07月28日 - 17:08</p>
+  <p><span>原始链接:</span><a href="/2019/07/28/poj3660.html" title="poj3660">https://yuanfang.tech/2019/07/28/poj3660.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/28/poj3660.html" aria-label="复制成功！"></i></span>
   </p>
 </div>
 <script> 
@@ -640,11 +641,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dijstra/" rel="tag"><i class="fa fa-tag"></i>dijstra</a>
-          
             <a href="/tags/poj/" rel="tag"><i class="fa fa-tag"></i>poj</a>
           
             <a href="/tags/kuangbin/" rel="tag"><i class="fa fa-tag"></i>kuangbin</a>
+          
+            <a href="/tags/floyd/" rel="tag"><i class="fa fa-tag"></i>floyd</a>
           
         </div>
       
@@ -657,18 +658,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/25/floyd.html" rel="prev" title="floyd">
-                 <i class="fa fa-chevron-left"></i> floyd
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/24/poj1797.html" rel="next" title="poj1797">
-                poj1797 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/28/poj1502.html" rel="next" title="poj1502">
+                poj1502 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
