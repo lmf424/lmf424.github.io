@@ -164,18 +164,20 @@
 
 
 
-  <meta name="description" content="poj2240,bellman求正环，map使用">
-<meta name="keywords" content="bellman,poj,kuangbin">
+  <meta name="description" content="拓扑排序（Topological sort）拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。 时间复杂度：O（N+E） 空间复杂度：O（N）">
+<meta name="keywords" content="topsort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj2240">
-<meta property="og:url" content="https://yuanfang.tech/2019/07/29/poj2240.html">
+<meta property="og:title" content="Topological sort">
+<meta property="og:url" content="https://yuanfang.tech/2019/07/30/Topological-sort.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="poj2240,bellman求正环，map使用">
+<meta property="og:description" content="拓扑排序（Topological sort）拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。 时间复杂度：O（N+E） 空间复杂度：O（N）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-29T10:40:04.515Z">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/Topological-sort/20150507001759702">
+<meta property="og:updated_time" content="2019-07-30T07:08:48.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj2240">
-<meta name="twitter:description" content="poj2240,bellman求正环，map使用">
+<meta name="twitter:title" content="Topological sort">
+<meta name="twitter:description" content="拓扑排序（Topological sort）拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。 时间复杂度：O（N+E） 空间复杂度：O（N）">
+<meta name="twitter:image" content="https://yuanfang.tech/2019/07/30/Topological-sort/20150507001759702">
 
 
 
@@ -184,7 +186,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/2019/07/29/poj2240.html">
+  <link rel="canonical" href="https://yuanfang.tech/2019/07/30/Topological-sort.html">
 
 
 
@@ -194,7 +196,7 @@
   };
 </script>
 
-  <title>poj2240 | 远芳</title>
+  <title>Topological sort | 远芳</title>
   
 
 
@@ -447,7 +449,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/29/poj2240.html">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/30/Topological-sort.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mengfei Liu">
@@ -464,7 +466,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">poj2240
+          <h1 class="post-title" itemprop="name headline">Topological sort
               
             
           </h1>
@@ -489,7 +491,7 @@
                 
               
 
-              <time title="创建时间：2019-07-29 18:35:15 / 修改时间：18:40:04" itemprop="dateCreated datePublished" datetime="2019-07-29T18:35:15+08:00">2019-07-29</time>
+              <time title="创建时间：2019-07-30 14:49:54 / 修改时间：15:08:48" itemprop="dateCreated datePublished" datetime="2019-07-30T14:49:54+08:00">2019-07-30</time>
             
 
             
@@ -511,7 +513,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/poj/" itemprop="url" rel="index"><span itemprop="name">poj</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
                 
                 
@@ -526,8 +528,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/29/poj2240.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/29/poj2240.html" itemprop="commentCount"></span>
+                <a href="/2019/07/30/Topological-sort.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/Topological-sort.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -535,7 +537,7 @@
 
           
           
-             <span id="/2019/07/29/poj2240.html" class="leancloud_visitors" data-flag-title="poj2240">
+             <span id="/2019/07/30/Topological-sort.html" class="leancloud_visitors" data-flag-title="Topological sort">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -566,15 +568,22 @@
       
 
       
-        <p></p><p class="description"></p><br>poj2240,bellman求正环，map使用<p></p>
+        <p></p><p class="description"></p><p></p>
+<h2 id="拓扑排序（Topological-sort）"><a href="#拓扑排序（Topological-sort）" class="headerlink" title="拓扑排序（Topological sort）"></a>拓扑排序（Topological sort）</h2><p>拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。</p>
+<p>时间复杂度：O（N+E）</p>
+<p>空间复杂度：O（N）</p>
 <a id="more"></a>
-<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=2240" target="_blank" rel="noopener">http://poj.org/problem?id=2240</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>T个国家，接下来T行每个国家的名字。</p>
-<p>再输入N，代表N个交换所。</p>
-<p>接下来N行，输入A C B</p>
-<p>表示A国到B国的汇率是C。</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>用map解决输入问题之后做法就同poj1860</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;name;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> u,v;</span><br><span class="line">	<span class="keyword">double</span> w;</span><br><span class="line">&#125;e[<span class="number">1010</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t,n;</span><br><span class="line">	<span class="keyword">int</span> i=<span class="number">0</span>,j;</span><br><span class="line">	<span class="built_in">string</span> s,u,v;</span><br><span class="line">	<span class="keyword">double</span> w,dis[<span class="number">40</span>];</span><br><span class="line">	<span class="keyword">int</span> time=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t)!=EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(t==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">int</span> tt=t;</span><br><span class="line">		i=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(t--)</span><br><span class="line">		&#123;</span><br><span class="line">			i++;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">			name[s]=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">		i=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> k=n;</span><br><span class="line">		<span class="keyword">while</span>(n--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; u &gt;&gt; w &gt;&gt; v ;</span><br><span class="line">			e[i].u=name[u];</span><br><span class="line">			e[i].v=name[v];</span><br><span class="line">			e[i].w=w;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=tt;i++)</span><br><span class="line">		dis[i]=<span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">		dis[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=tt;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=k;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[e[j].v]&lt;dis[e[j].u]*e[j].w)</span><br><span class="line">					dis[e[j].v]=dis[e[j].u]*e[j].w;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> flag=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=k;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[e[j].v]&lt;dis[e[j].u]*e[j].w)</span><br><span class="line">					flag=<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		<span class="keyword">if</span>(flag)<span class="built_in">printf</span>(<span class="string">"Case %d: Yes\n"</span>,time);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"Case %d: No\n"</span>,time);</span><br><span class="line">		time++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>举个例子：</p>
+<p>有人想要制作一件工具，但是这个工具不是一次就可以完成的，分很多个步骤，而且这些步骤是有顺序的，也就是说，假设B的顺序在A的后面，那么你就必须要先完成A再完成B，但是也有些步骤不分顺序，意思是你先做哪一个都是可以的。</p>
+<p>面对这样的问题，我们可以把步骤建立成一张有向无环图，A指向B意思是A要在B前面完成，那么下面，我们就要找到一个顺序，来使答案符合题目要求。拓扑排序就是干这样的事情的。</p>
+<p><img src="Topological-sort\20150507001759702" alt="topsort"></p>
+<p>那么如何做呢？</p>
+<p>只需要遍历一边所有节点，然后找出没有入度的节点，将他们放到一个队列中。</p>
+<p>然后通过队列中的无入度的节点，弹出它，删掉这个节点的所有出边，会形成新的没有入度的节点。</p>
+<p>再将新的没有入读的节点放入队列，以此循环。</p>
+<p>直到队列为空。</p>
+<p>如果拓扑排序后的序列个数k小于图的节点数n，那么图中则存在环。环的节点数即为n-k。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line"><span class="comment">//priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt;q;</span></span><br><span class="line"><span class="comment">//优先队列的话，会按照数值大小有顺序的输出</span></span><br><span class="line"><span class="comment">//此处为了理解，暂时就用简单队列</span></span><br><span class="line">inttopo()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(inti=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        temp=q.front();<span class="comment">//如果是优先队列，这里可以是top()</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d-&gt;"</span>,temp);</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span>(inti=<span class="number">1</span>;i&lt;=n;i++)<span class="comment">//遍历从temp出发的每一条边，入度--</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>[temp][i])</span><br><span class="line">            &#123;</span><br><span class="line">                indegree[i]--;</span><br><span class="line">                <span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)q.push(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -605,12 +614,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/07/29/poj2240.html">poj2240</a></p>
+  <p><span>本文标题:</span><a href="/2019/07/30/Topological-sort.html">Topological sort</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
-  <p><span>发布时间:</span>2019年07月29日 - 18:35</p>
-  <p><span>最后更新:</span>2019年07月29日 - 18:40</p>
-  <p><span>原始链接:</span><a href="/2019/07/29/poj2240.html" title="poj2240">https://yuanfang.tech/2019/07/29/poj2240.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/29/poj2240.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年07月30日 - 14:49</p>
+  <p><span>最后更新:</span>2019年07月30日 - 15:08</p>
+  <p><span>原始链接:</span><a href="/2019/07/30/Topological-sort.html" title="Topological sort">https://yuanfang.tech/2019/07/30/Topological-sort.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/30/Topological-sort.html" aria-label="复制成功！"></i></span>
   </p>
 </div>
 <script> 
@@ -642,11 +651,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/bellman/" rel="tag"><i class="fa fa-tag"></i>bellman</a>
-          
-            <a href="/tags/poj/" rel="tag"><i class="fa fa-tag"></i>poj</a>
-          
-            <a href="/tags/kuangbin/" rel="tag"><i class="fa fa-tag"></i>kuangbin</a>
+            <a href="/tags/topsort/" rel="tag"><i class="fa fa-tag"></i>topsort</a>
           
         </div>
       
@@ -659,18 +664,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/30/Topological-sort.html" rel="prev" title="Topological sort">
-                 <i class="fa fa-chevron-left"></i> Topological sort
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/28/poj3660.html" rel="next" title="poj3660">
-                poj3660 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/29/poj2240.html" rel="next" title="poj2240">
+                poj2240 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -855,7 +856,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">3.</span> <span class="nav-text">细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#拓扑排序（Topological-sort）"><span class="nav-number">1.</span> <span class="nav-text">拓扑排序（Topological sort）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

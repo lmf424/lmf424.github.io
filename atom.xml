@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuanfang.tech/"/>
-  <updated>2019-07-29T10:40:04.515Z</updated>
+  <updated>2019-07-30T07:08:48.245Z</updated>
   <id>https://yuanfang.tech/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Topological sort</title>
+    <link href="https://yuanfang.tech/2019/07/30/Topological-sort.html"/>
+    <id>https://yuanfang.tech/2019/07/30/Topological-sort.html</id>
+    <published>2019-07-30T06:49:54.000Z</published>
+    <updated>2019-07-30T07:08:48.245Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><p></p><h2 id="拓扑排序（Topological-sort）"><a href="#拓扑排序（Topological-sort）" class="headerlink" title="拓扑排序（Topological sort）"></a>拓扑排序（Topological sort）</h2><p>拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。</p><p>时间复杂度：O（N+E）</p><p>空间复杂度：O（N）</p><a id="more"></a><p>举个例子：</p><p>有人想要制作一件工具，但是这个工具不是一次就可以完成的，分很多个步骤，而且这些步骤是有顺序的，也就是说，假设B的顺序在A的后面，那么你就必须要先完成A再完成B，但是也有些步骤不分顺序，意思是你先做哪一个都是可以的。</p><p>面对这样的问题，我们可以把步骤建立成一张有向无环图，A指向B意思是A要在B前面完成，那么下面，我们就要找到一个顺序，来使答案符合题目要求。拓扑排序就是干这样的事情的。</p><p><img src="Topological-sort\20150507001759702" alt="topsort"></p><p>那么如何做呢？</p><p>只需要遍历一边所有节点，然后找出没有入度的节点，将他们放到一个队列中。</p><p>然后通过队列中的无入度的节点，弹出它，删掉这个节点的所有出边，会形成新的没有入度的节点。</p><p>再将新的没有入读的节点放入队列，以此循环。</p><p>直到队列为空。</p><p>如果拓扑排序后的序列个数k小于图的节点数n，那么图中则存在环。环的节点数即为n-k。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line"><span class="comment">//priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt;q;</span></span><br><span class="line"><span class="comment">//优先队列的话，会按照数值大小有顺序的输出</span></span><br><span class="line"><span class="comment">//此处为了理解，暂时就用简单队列</span></span><br><span class="line">inttopo()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(inti=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> temp;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        temp=q.front();<span class="comment">//如果是优先队列，这里可以是top()</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d-&gt;"</span>,temp);</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">for</span>(inti=<span class="number">1</span>;i&lt;=n;i++)<span class="comment">//遍历从temp出发的每一条边，入度--</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">map</span>[temp][i])</span><br><span class="line">            &#123;</span><br><span class="line">                indegree[i]--;</span><br><span class="line">                <span class="keyword">if</span>(indegree[i]==<span class="number">0</span>)q.push(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;h2 id=&quot;拓扑排序（Topological-sort）&quot;&gt;&lt;a href=&quot;#拓扑排序（Topological-sort）&quot; class=&quot;headerlink&quot; title=&quot;拓扑排序（Topological sort）&quot;&gt;&lt;/a&gt;拓扑排序（Topological sort）&lt;/h2&gt;&lt;p&gt;拓扑排序是一个比较常用的图论算法，经常用于完成有依赖关系的任务的排序。&lt;/p&gt;
+&lt;p&gt;时间复杂度：O（N+E）&lt;/p&gt;
+&lt;p&gt;空间复杂度：O（N）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="algorithm" scheme="https://yuanfang.tech/categories/algorithm/"/>
+    
+    
+      <category term="topsort" scheme="https://yuanfang.tech/tags/topsort/"/>
+    
+  </entry>
   
   <entry>
     <title>poj2240</title>
