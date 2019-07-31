@@ -164,16 +164,29 @@
 
 
 
-  <meta name="description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="远芳">
-<meta property="og:url" content="https://yuanfang.tech/archives/2019/page/2/index.html">
+  <meta name="description" content="SPFA算法（Shortest Path Faster Algorithm）复杂度：O（KE） k为所有顶点进队的平均次数，可以证明k一般小于等于2。 计算单源最短路，图可带负权。玄学复杂度，比普通Dijstra和Floyd要低。 可以判断是否有负环。">
+<meta name="keywords" content="spfa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="spfa">
+<meta property="og:url" content="https://yuanfang.tech/2019/07/30/spfa.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
+<meta property="og:description" content="SPFA算法（Shortest Path Faster Algorithm）复杂度：O（KE） k为所有顶点进队的平均次数，可以证明k一般小于等于2。 计算单源最短路，图可带负权。玄学复杂度，比普通Dijstra和Floyd要低。 可以判断是否有负环。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/1_1.png">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/1.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/2.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/3.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/4.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/5.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/6.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/7.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/8.jpg">
+<meta property="og:image" content="https://yuanfang.tech/2019/07/30/spfa/9.jpg">
+<meta property="og:updated_time" content="2019-07-31T07:02:31.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="远芳">
-<meta name="twitter:description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。如今香气很淡，你人很远，车水马龙渐感无言。">
+<meta name="twitter:title" content="spfa">
+<meta name="twitter:description" content="SPFA算法（Shortest Path Faster Algorithm）复杂度：O（KE） k为所有顶点进队的平均次数，可以证明k一般小于等于2。 计算单源最短路，图可带负权。玄学复杂度，比普通Dijstra和Floyd要低。 可以判断是否有负环。">
+<meta name="twitter:image" content="https://yuanfang.tech/2019/07/30/spfa/1_1.png">
 
 
 
@@ -182,7 +195,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/archives/2019/page/2/">
+  <link rel="canonical" href="https://yuanfang.tech/2019/07/30/spfa.html">
 
 
 
@@ -192,7 +205,7 @@
   };
 </script>
 
-  <title>归档 | 远芳</title>
+  <title>spfa | 远芳</title>
   
 
 
@@ -245,7 +258,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -354,7 +367,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -425,283 +438,321 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/30/spfa.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mengfei Liu">
+      <meta itemprop="description" content="从前相识很浅，雪山很深，筚路蓝缕一去多年。<br>如今香气很淡，你人很远，车水马龙渐感无言。">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远芳">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">spfa
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-30 17:20:03" itemprop="dateCreated datePublished" datetime="2019-07-30T17:20:03+08:00">2019-07-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 15:02:31" itemprop="dateModified" datetime="2019-07-31T15:02:31+08:00">2019-07-31</time>
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 16 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/30/spfa.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/30/spfa.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
+             <span id="/2019/07/30/spfa.html" class="leancloud_visitors" data-flag-title="spfa">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/25/poj3268.html" itemprop="url">
-              
-                <span itemprop="name">poj3268</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-25T01:39:39+08:00" content="2019-07-25">
-          07-25
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/24/poj1797.html" itemprop="url">
-              
-                <span itemprop="name">poj1797</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T20:00:23+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/24/poj2253.html" itemprop="url">
-              
-                <span itemprop="name">poj2253</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T17:42:08+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/24/poj2387.html" itemprop="url">
-              
-                <span itemprop="name">poj2387</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-24T16:15:07+08:00" content="2019-07-24">
-          07-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p></p><p class="description"></p><p></p>
+<h2 id="SPFA算法（Shortest-Path-Faster-Algorithm）"><a href="#SPFA算法（Shortest-Path-Faster-Algorithm）" class="headerlink" title="SPFA算法（Shortest Path Faster Algorithm）"></a>SPFA算法（Shortest Path Faster Algorithm）</h2><p>复杂度：O（KE）</p>
+<p>k为所有顶点进队的平均次数，可以证明k一般小于等于2。</p>
+<p>计算单源最短路，图可带负权。玄学复杂度，比普通Dijstra和Floyd要低。</p>
+<p>可以判断是否有负环。</p>
+<a id="more"></a>
+<p>例：求a点到其余各点的最短路径。</p>
+<p><img src="spfa\1_1.png" alt="img"></p>
+<p>首先建立起始点a到其余各点的最短路径表格dis[]</p>
+<p><img src="spfa\1.jpg" alt="img"></p>
+<p>首先源点a入队，当队列非空时：队首元素（a）出队，对以a为起始点的所有边的终点依次进行松弛操作（此处有b,c,d三个点），此时路径表格状态为：</p>
+<p><img src="spfa\2.jpg" alt="img"></p>
+<p>在松弛时三个点的最短路径估值变小了，而这些点队列中都没有出现，这些点需要入队，此时，队列中新入队了三个结点b,c,d</p>
+<p>队首元素b点出队，对以b为起始点的所有边的终点依次进行松弛操作（此处只有e点），此时路径表格状态为：</p>
+<p><img src="spfa\3.jpg" alt="img"></p>
+<p>在最短路径表中，e的最短路径估值也变小了，e在队列中不存在，因此e也要入队，此时队列中的元素为c，d，e</p>
+<p>队首元素c点出队，对以c为起始点的所有边的终点依次进行松弛操作（此处有e,f两个点），此时路径表格状态为：</p>
+<p><img src="spfa\4.jpg" alt="img"></p>
+<p>在最短路径表中，e，f的最短路径估值变小了，e在队列中存在，f不存在。因此e不用入队了，f要入队，此时队列中的元素为d，e，f</p>
+<p> 队首元素d点出队，对以d为起始点的所有边的终点依次进行松弛操作（此处只有g这个点），此时路径表格状态为：</p>
+<p><img src="spfa\5.jpg" alt="img"></p>
+<p>在最短路径表中，g的最短路径估值没有变小（松弛不成功），没有新结点入队，队列中元素为f，g</p>
+<p>队首元素f点出队，对以f为起始点的所有边的终点依次进行松弛操作（此处有d，e，g三个点），此时路径表格状态为：</p>
+<p><img src="spfa\6.jpg" alt="img"></p>
+<p>在最短路径表中，e，g的最短路径估值又变小，队列中无e点，e入队，队列中存在g这个点，g不用入队，此时队列中元素为g，e</p>
+<p>队首元素g点出队，对以g为起始点的所有边的终点依次进行松弛操作（此处只有b点），此时路径表格状态为：</p>
+<p><img src="spfa\7.jpg" alt="img"></p>
+<p>在最短路径表中，b的最短路径估值又变小，队列中无b点，b入队，此时队列中元素为e，b队首元素e点出队，对以e为起始点的所有边的终点依次进行松弛操作（此处只有g这个点），此时路径表格状态为：</p>
+<p><img src="spfa\8.jpg" alt="img"></p>
+<p>在最短路径表中，g的最短路径估值没变化（松弛不成功），此时队列中元素为b</p>
+<p>队首元素b点出队，对以b为起始点的所有边的终点依次进行松弛操作（此处只有e这个点），此时路径表格状态为：</p>
+<p><img src="spfa\9.jpg" alt="img"></p>
+<p>在最短路径表中，e的最短路径估值没变化（松弛不成功），此时队列为空了。算法结束。</p>
+<p>最终dis[]即为a到各点最短路。</p>
+<p>若某个点进队了n次即图存在负环。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>1、创建一个队列，将源点放入。</p>
+<p>2、每次从队列中取出一个点X，遍历点X的所有与X相通的节点Y，比较dis[x]+e[x] [y]&lt;dis[y];</p>
+<p>如果dis[x]+e[x] [y]&lt;dis[y]，则说明需要更新操作。</p>
+<p>dis[y]=dis[x]+e[x] [y]//更新最短路径</p>
+<p>由于Y改变了最短路径长度，所以需要以Y开始往后更新，因此如果Y不在队列中，则将Y加入队列。</p>
+<p>（在此期间可以记录各个节点的入队次数，判断是否存在负环）</p>
+<p>3.循环2，直到队列为空。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">queue</span> &lt;<span class="keyword">int</span>&gt;q;</span><br><span class="line">	q.push(x);<span class="comment">//将源点放入队列中</span></span><br><span class="line">	vis[x]=<span class="literal">true</span>;<span class="comment">//vis变true</span></span><br><span class="line">	dis[x]=<span class="number">0</span>;<span class="comment">//源点距离为0，其余点为inf</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())<span class="comment">//直到队列为空</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u=q.front();<span class="comment">//取出队列第一个元素</span></span><br><span class="line">		q.pop();<span class="comment">//弹出第一个元素</span></span><br><span class="line">		vis[u]=<span class="literal">false</span>;<span class="comment">//第一个元素因为出队了，所以vis变false</span></span><br><span class="line">		<span class="keyword">for</span>(i=first[u];i;i=edge[i].next)<span class="comment">//遍历第一个元素的所有出边</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> v=edge[i].v;</span><br><span class="line">			<span class="keyword">int</span> w=edge[i].w;</span><br><span class="line">			<span class="keyword">if</span>(dis[v]&gt;dis[u]+w)<span class="comment">//判断能否通过第一个元素出边进行松弛</span></span><br><span class="line">			&#123;</span><br><span class="line">				dis[v]=dis[u]+w;</span><br><span class="line">				<span class="keyword">if</span>(!vis[v])<span class="comment">//可以松弛但不在队列中，那么就放入队列，vis变true</span></span><br><span class="line">				&#123;</span><br><span class="line">					q.push(v);</span><br><span class="line">					vis[v]=<span class="literal">true</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/23/dijstra.html" itemprop="url">
-              
-                <span itemprop="name">dijstra</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-23T14:09:13+08:00" content="2019-07-23">
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/22/my-first.html" itemprop="url">
-              
-                <span itemprop="name">my first blog</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-22T21:16:19+08:00" content="2019-07-22">
-          07-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/07/30/spfa.html">spfa</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
+  <p><span>发布时间:</span>2019年07月30日 - 17:20</p>
+  <p><span>最后更新:</span>2019年07月31日 - 15:02</p>
+  <p><span>原始链接:</span><a href="/2019/07/30/spfa.html" title="spfa">https://yuanfang.tech/2019/07/30/spfa.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/30/spfa.html" aria-label="复制成功！"></i></span>
+  </p>
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+  });
+    });  
+</script>
+
+          
+    </div>
+    
+
+    
+       
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/spfa/" rel="tag"><i class="fa fa-tag"></i>spfa</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/31/poj1511.html" rel="prev" title="poj1511">
+                 <i class="fa fa-chevron-left"></i> poj1511
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/30/Topological-sort.html" rel="next" title="Topological sort">
+                Topological sort <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2019/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -722,8 +773,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -840,6 +900,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SPFA算法（Shortest-Path-Faster-Algorithm）"><span class="nav-number">1.</span> <span class="nav-text">SPFA算法（Shortest Path Faster Algorithm）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1003,6 +1079,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.6.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.6.0"></script>
+
+
 
   
 
@@ -1382,43 +1462,42 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -1438,9 +1517,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
