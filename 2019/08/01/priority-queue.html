@@ -164,18 +164,18 @@
 
 
 
-  <meta name="description" content="板子题，最短路，poj2387">
-<meta name="keywords" content="dijstra,poj,kuangbin">
+  <meta name="description" content="优先队列（priority_queue）优先队列是什么呢？ 说白了，就是一种功能强大的队列。 强大在于自动排序。 原文：https://blog.csdn.net/c20182030/article/details/70757660">
+<meta name="keywords" content="STL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj2387">
-<meta property="og:url" content="https://yuanfang.tech/2019/07/24/poj2387.html">
+<meta property="og:title" content="priority_queue">
+<meta property="og:url" content="https://yuanfang.tech/2019/08/01/priority-queue.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="板子题，最短路，poj2387">
+<meta property="og:description" content="优先队列（priority_queue）优先队列是什么呢？ 说白了，就是一种功能强大的队列。 强大在于自动排序。 原文：https://blog.csdn.net/c20182030/article/details/70757660">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T12:51:59.682Z">
+<meta property="og:updated_time" content="2019-08-01T07:08:52.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj2387">
-<meta name="twitter:description" content="板子题，最短路，poj2387">
+<meta name="twitter:title" content="priority_queue">
+<meta name="twitter:description" content="优先队列（priority_queue）优先队列是什么呢？ 说白了，就是一种功能强大的队列。 强大在于自动排序。 原文：https://blog.csdn.net/c20182030/article/details/70757660">
 
 
 
@@ -184,7 +184,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/2019/07/24/poj2387.html">
+  <link rel="canonical" href="https://yuanfang.tech/2019/08/01/priority-queue.html">
 
 
 
@@ -194,7 +194,7 @@
   };
 </script>
 
-  <title>poj2387 | 远芳</title>
+  <title>priority_queue | 远芳</title>
   
 
 
@@ -447,7 +447,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/07/24/poj2387.html">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/08/01/priority-queue.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mengfei Liu">
@@ -464,7 +464,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">poj2387
+          <h1 class="post-title" itemprop="name headline">priority_queue
               
             
           </h1>
@@ -489,7 +489,7 @@
                 
               
 
-              <time title="创建时间：2019-07-24 16:15:07 / 修改时间：20:51:59" itemprop="dateCreated datePublished" datetime="2019-07-24T16:15:07+08:00">2019-07-24</time>
+              <time title="创建时间：2019-08-01 14:37:46 / 修改时间：15:08:52" itemprop="dateCreated datePublished" datetime="2019-08-01T14:37:46+08:00">2019-08-01</time>
             
 
             
@@ -511,7 +511,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/poj/" itemprop="url" rel="index"><span itemprop="name">poj</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/STL/" itemprop="url" rel="index"><span itemprop="name">STL</span></a></span>
 
                 
                 
@@ -526,8 +526,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/24/poj2387.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/24/poj2387.html" itemprop="commentCount"></span>
+                <a href="/2019/08/01/priority-queue.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/01/priority-queue.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -535,7 +535,7 @@
 
           
           
-             <span id="/2019/07/24/poj2387.html" class="leancloud_visitors" data-flag-title="poj2387">
+             <span id="/2019/08/01/priority-queue.html" class="leancloud_visitors" data-flag-title="priority_queue">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -566,15 +566,56 @@
       
 
       
-        <p></p><p class="description"></p><br>板子题，最短路，poj2387<p></p>
+        <p></p><p class="description"></p><p></p>
+<h2 id="优先队列（priority-queue）"><a href="#优先队列（priority-queue）" class="headerlink" title="优先队列（priority_queue）"></a>优先队列（priority_queue）</h2><p>优先队列是什么呢？</p>
+<p>说白了，就是一种功能强大的队列。</p>
+<p>强大在于<strong>自动排序</strong>。</p>
+<p>原文：<a href="https://blog.csdn.net/c20182030/article/details/70757660" target="_blank" rel="noopener">https://blog.csdn.net/c20182030/article/details/70757660</a> </p>
 <a id="more"></a>
-<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=2387" target="_blank" rel="noopener">http://poj.org/problem?id=2387</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>第一行T组数据，N个顶点</p>
-<p>之后T行告诉你a到b的距离c</p>
-<p>求到n的最短路径</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>有重边 \ \两点之间的路未必只有一条</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>Dijstra：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">1010</span>][<span class="number">1010</span>],dis[<span class="number">1010</span>],book[<span class="number">1010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,t,a,b,c,i,j;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;t,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span> e[i][j]=inf; </span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		<span class="keyword">if</span>(e[a][b]&gt;c)</span><br><span class="line">		&#123;</span><br><span class="line">			e[a][b]=c;</span><br><span class="line">			e[b][a]=c;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line">		book[i]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	dis[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">	book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> min=inf;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dis[j]&lt;min&amp;&amp;book[j]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				min=dis[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		book[temp]=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">int</span> v;</span><br><span class="line">		<span class="keyword">for</span>(v=<span class="number">1</span>;v&lt;=n;v++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][v]&lt;inf)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(dis[v]&gt;dis[temp]+e[temp][v])dis[v]=dis[temp]+e[temp][v];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,dis[n]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优先队列也是队列，所以在头文件queue中。</p>
+<p>一个优先队列声明的基本格式是：</p>
+<p><strong>priority_queue&lt;结构类型&gt; 队列名;</strong></p>
+<p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue &lt;<span class="keyword">int</span>&gt; i;</span><br><span class="line">priority_queue &lt;<span class="keyword">double</span>&gt; d;</span><br></pre></td></tr></table></figure>
+<p>但是常用的是这样：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">priority_queue &lt;node&gt; q;</span><br><span class="line"><span class="comment">//node是一个结构体</span></span><br><span class="line"><span class="comment">//结构体里重载了‘&lt;’小于符号</span></span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt; q;</span><br><span class="line"><span class="comment">//不需要#include&lt;vector&gt;头文件</span></span><br><span class="line"><span class="comment">//注意后面两个“&gt;”不要写在一起，“&gt;&gt;”是右移运算符</span></span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;q;</span><br></pre></td></tr></table></figure>
+<h2 id="优先队列的基本操作"><a href="#优先队列的基本操作" class="headerlink" title="优先队列的基本操作"></a>优先队列的基本操作</h2><p>与队列操作基本一致。</p>
+<p>以一个名为q的优先队列为例。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">q.size();//返回q里元素个数</span><br><span class="line">q.empty();//返回q是否为空，空则返回1，否则返回0</span><br><span class="line">q.push(k);//在q的末尾插入k</span><br><span class="line">q.pop();//删掉q的第一个元素</span><br><span class="line">q.top();//返回q的第一个元素</span><br></pre></td></tr></table></figure>
+<h2 id="优先队列的特性"><a href="#优先队列的特性" class="headerlink" title="优先队列的特性"></a>优先队列的特性</h2><p><strong>自动排序</strong></p>
+<p>如何排？</p>
+<h4 id="默认优先队列（非结构体结构）"><a href="#默认优先队列（非结构体结构）" class="headerlink" title="默认优先队列（非结构体结构）"></a>默认优先队列（非结构体结构）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">priority_queue &lt;<span class="keyword">int</span>&gt; q;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">priority_queue &lt;int&gt; q;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	q.push(10),q.push(8),q.push(12),q.push(14),q.push(6);</span><br><span class="line">	while(!q.empty())</span><br><span class="line">		printf(&quot;%d &quot;,q.top()),q.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序大意就是在这个优先队列里依次插入10、8、12、14、6，再输出。</p>
+<p>结果是什么呢？</p>
+<p>14 12 10 8 6</p>
+<p>也就是说默认是<strong>从大到小</strong>排序的。</p>
+<h4 id="默认的优先队列（结构体，重载小于）"><a href="#默认的优先队列（结构体，重载小于）" class="headerlink" title="默认的优先队列（结构体，重载小于）"></a>默认的优先队列（结构体，重载小于）</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp; a) <span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> x&lt;a.x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个node结构体有两个成员，x和y，它的小于规则是x小者小。</p>
+<p>验证程序：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node &amp; a) <span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> x&lt;a.x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;k;</span><br><span class="line">priority_queue &lt;node&gt; q;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	k.x=<span class="number">10</span>,k.y=<span class="number">100</span>; q.push(k);</span><br><span class="line">	k.x=<span class="number">12</span>,k.y=<span class="number">60</span>; q.push(k);</span><br><span class="line">	k.x=<span class="number">14</span>,k.y=<span class="number">40</span>; q.push(k);</span><br><span class="line">	k.x=<span class="number">6</span>,k.y=<span class="number">80</span>; q.push(k);</span><br><span class="line">	k.x=<span class="number">8</span>,k.y=<span class="number">20</span>; q.push(k);</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		node m=q.top(); q.pop();</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"(%d,%d) "</span>,m.x,m.y);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序大意就是插入(10,100),(12,60),(14,40),(6,20),(8,20)这五个node。</p>
+<p>输出为：</p>
+<p>(14,40) (12,60) (10,100) (8,20) (6,80)</p>
+<p>它也是按照<strong>重载后的小于规则</strong>，从大到小排序的。</p>
+<h3 id="less和greater优先队列"><a href="#less和greater优先队列" class="headerlink" title="less和greater优先队列"></a>less和greater优先队列</h3><p>还是以int为例，先来声明：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt; p;</span><br><span class="line">priority_queue &lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt; q;</span><br></pre></td></tr></table></figure>
+<p>再次强调：“<code>&gt;</code>”不要两个拼在一起。</p>
+<p>验证程序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">priority_queue &lt;int,vector&lt;int&gt;,less&lt;int&gt; &gt; p;</span><br><span class="line">priority_queue &lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt; q;</span><br><span class="line">int a[5]=&#123;10,12,14,6,8&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;5;i++)</span><br><span class="line">		p.push(a[i]),q.push(a[i]);</span><br><span class="line">		</span><br><span class="line">	printf(&quot;less&lt;int&gt;:&quot;)；</span><br><span class="line">	while(!p.empty())</span><br><span class="line">		printf(&quot;%d &quot;,p.top()),p.pop();	</span><br><span class="line">		</span><br><span class="line">	printf(&quot;\ngreater&lt;int&gt;:&quot;)；</span><br><span class="line">	while(!q.empty())</span><br><span class="line">		printf(&quot;%d &quot;,q.top()),q.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<p>less<int>:14 12 10 8 6 </int></p>
+<p>greater<int>:6 8 10 12 14</int></p>
+<p>所以从结果可以知道：<strong>less是从大到小，greater是从小到大</strong>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>平时最好写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,less&lt;<span class="keyword">int</span>&gt; &gt;q;</span><br><span class="line">priority_queue&lt;<span class="keyword">int</span>,<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;,greater&lt;<span class="keyword">int</span>&gt; &gt;q;</span><br></pre></td></tr></table></figure>
+<p>这样两种写法都可以记住。</p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>如果想把一个队列按不同的方式优先，就要：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> fir,sec;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;fir,&amp;sec);&#125;</span><br><span class="line">&#125;input;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span> <span class="params">()</span> <span class="params">(<span class="keyword">const</span> node &amp;x,<span class="keyword">const</span> node &amp;y)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x.fir&lt;y.fir;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;<span class="comment">//当一个node x的fir值小于另一个node y的fir值时，称x&lt;y</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span> <span class="params">()</span> <span class="params">(<span class="keyword">const</span> node &amp;x,<span class="keyword">const</span> node &amp;y)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x.sec&lt;y.sec;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;<span class="comment">//当一个node x的sec值小于另一个node y的sec值时，称x&lt;y</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">cmp3</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">operator</span> <span class="params">()</span> <span class="params">(<span class="keyword">const</span> node &amp;x,<span class="keyword">const</span> node &amp;y)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x.fir+x.sec&lt;y.fir+y.sec; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;<span class="comment">//当一个node x的fri值和sec值的和小于另一个node y的fir值和sec值的和时，称x&lt;y</span></span><br><span class="line"></span><br><span class="line">priority_queue&lt;node,<span class="built_in">vector</span>&lt;node&gt;,cmp1&gt; q1;</span><br><span class="line">priority_queue&lt;node,<span class="built_in">vector</span>&lt;node&gt;,cmp2&gt; q2;</span><br><span class="line">priority_queue&lt;node,<span class="built_in">vector</span>&lt;node&gt;,cmp3&gt; q3;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) input.Read(),q1.push(input),q2.push(input),q3.push(input);</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\ncmp1:\n"</span>);</span><br><span class="line">	<span class="keyword">while</span>(!q1.empty()) <span class="built_in">printf</span>(<span class="string">"(%d,%d) "</span>,q1.top().fir,q1.top().sec),q1.pop();	</span><br><span class="line">		</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n\ncmp2:\n"</span>);</span><br><span class="line">	<span class="keyword">while</span>(!q2.empty()) <span class="built_in">printf</span>(<span class="string">"(%d,%d) "</span>,q2.top().fir,q2.top().sec),q2.pop();	</span><br><span class="line">		</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n\ncmp3:\n"</span>);</span><br><span class="line">	<span class="keyword">while</span>(!q3.empty()) <span class="built_in">printf</span>(<span class="string">"(%d,%d) "</span>,q3.top().fir,q3.top().sec),q3.pop();	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>读入：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">2</span> <span class="number">1</span></span><br><span class="line"><span class="number">6</span> <span class="number">9</span></span><br><span class="line"><span class="number">9</span> <span class="number">6</span></span><br><span class="line"><span class="number">-100</span> <span class="number">100</span></span><br><span class="line"><span class="number">-500</span> <span class="number">20</span></span><br><span class="line"><span class="number">4000</span> <span class="number">-3000</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cmp1:</span><br><span class="line">(<span class="number">4000</span>,<span class="number">-3000</span>) (<span class="number">9</span>,<span class="number">6</span>) (<span class="number">6</span>,<span class="number">9</span>) (<span class="number">2</span>,<span class="number">1</span>) (<span class="number">1</span>,<span class="number">2</span>) (<span class="number">-100</span>,<span class="number">100</span>) (<span class="number">-500</span>,<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">cmp2:</span><br><span class="line">(<span class="number">-100</span>,<span class="number">100</span>) (<span class="number">-500</span>,<span class="number">20</span>) (<span class="number">6</span>,<span class="number">9</span>) (<span class="number">9</span>,<span class="number">6</span>) (<span class="number">1</span>,<span class="number">2</span>) (<span class="number">2</span>,<span class="number">1</span>) (<span class="number">4000</span>,<span class="number">-3000</span>)</span><br><span class="line"></span><br><span class="line">cmp3:</span><br><span class="line">(<span class="number">4000</span>,<span class="number">-3000</span>) (<span class="number">6</span>,<span class="number">9</span>) (<span class="number">9</span>,<span class="number">6</span>) (<span class="number">1</span>,<span class="number">2</span>) (<span class="number">2</span>,<span class="number">1</span>) (<span class="number">-100</span>,<span class="number">100</span>) (<span class="number">-500</span>,<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -605,12 +646,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/07/24/poj2387.html">poj2387</a></p>
+  <p><span>本文标题:</span><a href="/2019/08/01/priority-queue.html">priority_queue</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
-  <p><span>发布时间:</span>2019年07月24日 - 16:15</p>
-  <p><span>最后更新:</span>2019年07月24日 - 20:51</p>
-  <p><span>原始链接:</span><a href="/2019/07/24/poj2387.html" title="poj2387">https://yuanfang.tech/2019/07/24/poj2387.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/07/24/poj2387.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年08月01日 - 14:37</p>
+  <p><span>最后更新:</span>2019年08月01日 - 15:08</p>
+  <p><span>原始链接:</span><a href="/2019/08/01/priority-queue.html" title="priority_queue">https://yuanfang.tech/2019/08/01/priority-queue.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/08/01/priority-queue.html" aria-label="复制成功！"></i></span>
   </p>
 </div>
 <script> 
@@ -642,11 +683,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/dijstra/" rel="tag"><i class="fa fa-tag"></i>dijstra</a>
-          
-            <a href="/tags/poj/" rel="tag"><i class="fa fa-tag"></i>poj</a>
-          
-            <a href="/tags/kuangbin/" rel="tag"><i class="fa fa-tag"></i>kuangbin</a>
+            <a href="/tags/STL/" rel="tag"><i class="fa fa-tag"></i>STL</a>
           
         </div>
       
@@ -659,18 +696,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/24/poj2253.html" rel="prev" title="poj2253">
-                 <i class="fa fa-chevron-left"></i> poj2253
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/23/dijstra.html" rel="next" title="dijstra">
-                dijstra <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/31/poj1511.html" rel="next" title="poj1511">
+                poj1511 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -861,7 +894,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">3.</span> <span class="nav-text">细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#优先队列（priority-queue）"><span class="nav-number">1.</span> <span class="nav-text">优先队列（priority_queue）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先队列的基本操作"><span class="nav-number">2.</span> <span class="nav-text">优先队列的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先队列的特性"><span class="nav-number">3.</span> <span class="nav-text">优先队列的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#默认优先队列（非结构体结构）"><span class="nav-number">3.0.1.</span> <span class="nav-text">默认优先队列（非结构体结构）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#默认的优先队列（结构体，重载小于）"><span class="nav-number">3.0.2.</span> <span class="nav-text">默认的优先队列（结构体，重载小于）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less和greater优先队列"><span class="nav-number">3.1.</span> <span class="nav-text">less和greater优先队列</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number">5.</span> <span class="nav-text">拓展</span></a></li></div>
             
 
           </div>
