@@ -172,10 +172,12 @@
 <meta property="og:site_name" content="远芳">
 <meta property="og:description" content="hdu4370,建图转化 + 最短路径。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-03T11:31:07.385Z">
+<meta property="og:image" content="https://yuanfang.tech/2019/08/03/hdu4370/1564895169459.png">
+<meta property="og:updated_time" content="2019-08-04T05:07:02.540Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hdu4370">
 <meta name="twitter:description" content="hdu4370,建图转化 + 最短路径。">
+<meta name="twitter:image" content="https://yuanfang.tech/2019/08/03/hdu4370/1564895169459.png">
 
 
 
@@ -489,12 +491,24 @@
                 
               
 
-              <time title="创建时间：2019-08-03 19:22:20 / 修改时间：19:31:07" itemprop="dateCreated datePublished" datetime="2019-08-03T19:22:20+08:00">2019-08-03</time>
+              <time title="创建时间：2019-08-03 19:22:20" itemprop="dateCreated datePublished" datetime="2019-08-03T19:22:20+08:00">2019-08-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-04 13:07:02" itemprop="dateModified" datetime="2019-08-04T13:07:02+08:00">2019-08-04</time>
               
             
           </span>
@@ -570,13 +584,8 @@
 <a id="more"></a>
 <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4370" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=4370</a></p>
 <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个 n*n 的矩阵 C，构造一个符合以下条件的矩阵 X：</p>
-<script type="math/tex; mode=display">
-X12+X13+...+X1n=1</script><script type="math/tex; mode=display">
-X1n+X2n+...+X(n−1)n=1</script><script type="math/tex; mode=display">
-∑Xki=∑Xij (1<k<n,1<=j<=n)</script><script type="math/tex; mode=display">
-求
-∑i=i,j=1nCij∗Xij
-的最小值</script><h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>将条件转化为图论最短路径问题，Xij 转化为边 i→j 的权值，那么对应关系为：</p>
+<p><img src="hdu4370\1564895169459.png" alt="1564895169459"></p>
+<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>将条件转化为图论最短路径问题，Xij 转化为边 i→j 的权值，那么对应关系为：</p>
 <ul>
 <li>表示点 1 的出度为 1</li>
 <li>表示点 n 的入度为 1</li>
@@ -618,7 +627,7 @@ X1n+X2n+...+X(n−1)n=1</script><script type="math/tex; mode=display">
   <p><span>本文标题:</span><a href="/2019/08/03/hdu4370.html">hdu4370</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
   <p><span>发布时间:</span>2019年08月03日 - 19:22</p>
-  <p><span>最后更新:</span>2019年08月03日 - 19:31</p>
+  <p><span>最后更新:</span>2019年08月04日 - 13:07</p>
   <p><span>原始链接:</span><a href="/2019/08/03/hdu4370.html" title="hdu4370">https://yuanfang.tech/2019/08/03/hdu4370.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/08/03/hdu4370.html" aria-label="复制成功！"></i></span>
   </p>
