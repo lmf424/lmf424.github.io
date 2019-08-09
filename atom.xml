@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yuanfang.tech/"/>
-  <updated>2019-08-07T12:35:14.599Z</updated>
+  <updated>2019-08-09T16:55:09.903Z</updated>
   <id>https://yuanfang.tech/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>hdu1213</title>
+    <link href="https://yuanfang.tech/2019/08/09/hdu1213.html"/>
+    <id>https://yuanfang.tech/2019/08/09/hdu1213.html</id>
+    <published>2019-08-09T06:21:56.000Z</published>
+    <updated>2019-08-09T16:55:09.903Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><br>hdu1213，并查集水题<p></p><a id="more"></a><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1213" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1213</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>输入t组，n个人，m组关系。</p><p>a认识b，b认识c，那么a也等于认识c。</p><p>认识的人可以坐一张桌子上，求最少要多少张桌子。</p><h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>假设一开始有n张桌子，每有一个人并到集合中去，就减少一张桌子</p><p>代码</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; </span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; parent;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">(<span class="keyword">int</span> max_size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">// 初始化每一个元素的根节点都为自身</span></span><br><span class="line">parent.clear();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;=max_size; ++i)</span><br><span class="line">parent.push_back(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> parent[x] == x ? x : find(parent[x]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">to_union</span><span class="params">(<span class="keyword">int</span> x1, <span class="keyword">int</span> x2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">parent[find(x1)] = find(x2);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> t,n,m,i,a,b;</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">1010</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line"><span class="keyword">while</span>(t--)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">init(n);</span><br><span class="line"><span class="keyword">int</span> ans=n;</span><br><span class="line"><span class="keyword">while</span>(m--)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(find(a)!=find(b))</span><br><span class="line">&#123;</span><br><span class="line">ans--;</span><br><span class="line">to_union(a,b);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;hdu1213，并查集水题&lt;p&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="hdu" scheme="https://yuanfang.tech/categories/hdu/"/>
+    
+    
+      <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+      <category term="hdu" scheme="https://yuanfang.tech/tags/hdu/"/>
+    
+      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
+  </entry>
+  
+  <entry>
     <title>七夕</title>
     <link href="https://yuanfang.tech/2019/08/07/%E4%B8%83%E5%A4%95.html"/>
     <id>https://yuanfang.tech/2019/08/07/七夕.html</id>
     <published>2019-08-07T11:53:15.000Z</published>
-    <updated>2019-08-07T12:35:14.599Z</updated>
+    <updated>2019-08-07T12:47:21.263Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><br>一看居然七夕了。<p></p><p><img src="http://pv35325dx.bkt.clouddn.com/56884409_p0.jpg" alt></p><a id="more"></a><p>我是对这个节日不怎么感冒的。</p><p>当然，我相信爱情，而且是很单纯的那种。我相信美好的爱情。</p><p>我甚至有时候感觉我自己长情到可怕。一个名字刻在心里十几年，我才活了多少岁。只是随着时间时间流逝，多年未见，已经与她没有任何交集了。我甚至开始怀疑，也许那只是我还小，不懂得爱慕和喜欢的区别。</p><p>我也觉得我不适合爱人。我懂啥，我啥也不懂。我能给予什么，我什么也给不了。我甚至为未来而迷茫。</p><p>爱乐之城真的很棒，梦想会一直伴随着你，爱人也许不会。</p><p>所以我觉得更应该去努力提升自己。</p><p>今天又是wrong answer了一个下午，日常自闭。但我很满足，很充实，我能感受到我在做有意义的事情。</p><p>就算是平庸如我，渺小如我，世间辽阔，也只一个。</p><p>这心头热火，唇间冰河，悉数无关我。</p><p>词不达意。</p><hr>]]></content>
     
@@ -32,8 +58,8 @@
     
     </summary>
     
+      <category term="somethings" scheme="https://yuanfang.tech/categories/somethings/"/>
     
-      <category term="somethings" scheme="https://yuanfang.tech/tags/somethings/"/>
     
   </entry>
   
@@ -55,11 +81,11 @@
       <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
     
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
+      <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
-      <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -83,11 +109,11 @@
       <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
     
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
+      <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
-      <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -109,11 +135,11 @@
       <category term="hdu" scheme="https://yuanfang.tech/categories/hdu/"/>
     
     
-      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
-    
       <category term="并查集" scheme="https://yuanfang.tech/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
     
       <category term="hdu" scheme="https://yuanfang.tech/tags/hdu/"/>
+    
+      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
   </entry>
   
@@ -211,11 +237,11 @@
       <category term="hdu" scheme="https://yuanfang.tech/categories/hdu/"/>
     
     
+      <category term="hdu" scheme="https://yuanfang.tech/tags/hdu/"/>
+    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
       <category term="spfa" scheme="https://yuanfang.tech/tags/spfa/"/>
-    
-      <category term="hdu" scheme="https://yuanfang.tech/tags/hdu/"/>
     
   </entry>
   
@@ -237,11 +263,11 @@
       <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
     
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
       <category term="spfa" scheme="https://yuanfang.tech/tags/spfa/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -266,9 +292,9 @@
     
       <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -292,9 +318,9 @@
     
       <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -318,11 +344,11 @@
     
       <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
       <category term="spfa" scheme="https://yuanfang.tech/tags/spfa/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -397,11 +423,11 @@
     
       <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
       <category term="spfa" scheme="https://yuanfang.tech/tags/spfa/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -476,9 +502,9 @@
     
       <category term="bellman" scheme="https://yuanfang.tech/tags/bellman/"/>
     
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
       <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
+      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
     
   </entry>
   
@@ -500,37 +526,11 @@
       <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
     
     
+      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
+    
       <category term="floyd" scheme="https://yuanfang.tech/tags/floyd/"/>
     
       <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
-      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>poj1502</title>
-    <link href="https://yuanfang.tech/2019/07/28/poj1502.html"/>
-    <id>https://yuanfang.tech/2019/07/28/poj1502.html</id>
-    <published>2019-07-28T08:08:49.000Z</published>
-    <updated>2019-07-28T08:14:02.026Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p></p><p class="description"></p><br>poj1502,单源最短路，坑爹题意，优雅使用sscanf<p></p><a id="more"></a><h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=1502" target="_blank" rel="noopener">http://poj.org/problem?id=1502</a></p><h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>N个点，之后给你半个邻接矩阵。由于自己到自己是0，所以也不给。</p><p>x为无法到达。</p><p>求最短路中的最大值。即dis[]中最大值。</p><h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>dijstra模板题。就是输入比较麻烦。</p><p>sscanf(s,”%d”,&amp;e[i] [j]);</p><p>这样输入就很简单了。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 99999999</span></span><br><span class="line"><span class="keyword">int</span> e[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> dis[<span class="number">110</span>];</span><br><span class="line"><span class="keyword">int</span> book[<span class="number">110</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n,i,j;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span> e[i][j]=inf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;i;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line"><span class="keyword">if</span>(s[<span class="number">0</span>]==<span class="string">'x'</span>)<span class="keyword">continue</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">sscanf</span>(s,<span class="string">"%d"</span>,&amp;e[i][j]);</span><br><span class="line">e[j][i]=e[i][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">dis[i]=e[<span class="number">1</span>][i];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">book[i]=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">book[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">dis[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> min,temp;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">min=inf;</span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(dis[j]&lt;min&amp;&amp;book[j]==<span class="number">0</span>)</span><br><span class="line">&#123;</span><br><span class="line">min=dis[j];</span><br><span class="line">temp=j;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">book[temp]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(dis[temp]+e[temp][j]&lt;dis[j])</span><br><span class="line">dis[j]=dis[temp]+e[temp][j];</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> max=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span>(max&lt;dis[i])max=dis[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,max);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><hr>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;/p&gt;&lt;p class=&quot;description&quot;&gt;&lt;/p&gt;&lt;br&gt;poj1502,单源最短路，坑爹题意，优雅使用sscanf&lt;p&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="poj" scheme="https://yuanfang.tech/categories/poj/"/>
-    
-    
-      <category term="dijstra" scheme="https://yuanfang.tech/tags/dijstra/"/>
-    
-      <category term="poj" scheme="https://yuanfang.tech/tags/poj/"/>
-    
-      <category term="kuangbin" scheme="https://yuanfang.tech/tags/kuangbin/"/>
     
   </entry>
   
