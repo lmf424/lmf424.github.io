@@ -172,10 +172,13 @@
 <meta property="og:site_name" content="远芳">
 <meta property="og:description" content="Prim算法最小生成树之Prim算法。 最小生成树(Minimum Cost Spanning Tree) 即构造连通图的最小代价生成树 思想与dijstra差不多，因此复杂度也一样。 复杂度：O（N²） 堆优化：O（ElogN）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-04T07:17:56.579Z">
+<meta property="og:image" content="https://yuanfang.tech/2019/08/04/Prim/20180528101859978.jfif">
+<meta property="og:image" content="https://yuanfang.tech/2019/08/04/Prim/20180528101912444.jfif">
+<meta property="og:updated_time" content="2019-08-10T16:03:18.955Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Prim">
 <meta name="twitter:description" content="Prim算法最小生成树之Prim算法。 最小生成树(Minimum Cost Spanning Tree) 即构造连通图的最小代价生成树 思想与dijstra差不多，因此复杂度也一样。 复杂度：O（N²） 堆优化：O（ElogN）">
+<meta name="twitter:image" content="https://yuanfang.tech/2019/08/04/Prim/20180528101859978.jfif">
 
 
 
@@ -487,12 +490,24 @@
                 
               
 
-              <time title="创建时间：2019-08-04 14:52:17 / 修改时间：15:17:56" itemprop="dateCreated datePublished" datetime="2019-08-04T14:52:17+08:00">2019-08-04</time>
+              <time title="创建时间：2019-08-04 14:52:17" itemprop="dateCreated datePublished" datetime="2019-08-04T14:52:17+08:00">2019-08-04</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-11 00:03:18" itemprop="dateModified" datetime="2019-08-11T00:03:18+08:00">2019-08-11</time>
               
             
           </span>
@@ -571,7 +586,27 @@
 <p>复杂度：O（N²）</p>
 <p>堆优化：O（ElogN）</p>
 <a id="more"></a>
-<p>待施工，觉得先写并查集更好</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>对于图<code>G</code>而言，<code>V</code>是所有顶点的集合。现在设置两个新的集合<code>U</code>和<code>T</code>， 其中<code>U</code>用于存放<code>G</code>的最小生成树中的顶点，<code>T</code>存放<code>G</code>的最小生成树中的边。从所有<code>u∈U</code>,<code>v∈(V−U)</code>，（<code>V-U</code>表示除去<code>U</code>的所有顶点)的边中选取权值最小的边<code>(u, v)</code>， 将顶点<code>v</code>加入集合<code>U</code>中，将边<code>(u, v)</code>加入集合<code>T</code>中，如此不断重复，直到<code>U = V</code>为止，最小生成树构造完毕，这时集合<code>T</code>中包含了最小生成树的所有边。</p>
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="Prim\20180528101859978.jfif" alt="img"></p>
+<p>以上图<code>G4</code>为例，对<code>Prim</code>算法进行模拟演示（假定选择<code>A</code>顶点为起始点）</p>
+<p><img src="Prim\20180528101912444.jfif" alt="Graph_prim_G4_details"></p>
+<p><strong>初始状态</strong>： <code>V</code>是所有顶点集合，即V={A,B,C,D,E,F,G}</p>
+<p><strong>第一步</strong>：<code>A</code>为起始点，将<code>A</code>加入到顶点集合<code>U</code>中</p>
+<p>U={A},V−U={B,C,D,E,F,G}</p>
+<p><strong>第二步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到<code>(A, B)</code>的权值最小，故将<code>B</code>加入到顶点集合<code>U</code>中</p>
+<p>U={A,B},V−U={C,D,E,F,G}</p>
+<p><strong>第三步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到<code>(B, F)</code>的权值最小，故将<code>F</code>加入到顶点集合<code>U</code>中</p>
+<p> U={A,B,F},V−U={C,D,E,G}</p>
+<p><strong>第四步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到<code>(F, E)</code>的权值最小，故将<code>E</code>加入到顶点集合<code>U</code>中</p>
+<p> U={A,B,F,E},V−U={C,D,G}</p>
+<p><strong>第五步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到<code>(E, D)</code>的权值最小，故将<code>D</code>加入到顶点集合<code>U</code>中</p>
+<p>U={A,B,F,E,D},V−U={C,G}</p>
+<p><strong>第六步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到<code>(D, C)</code>的权值最小，故将<code>C</code>加入到顶点集合<code>U</code>中</p>
+<p>U={A,B,F,E,D,C},V−U={G}</p>
+<p><strong>第七步</strong>：从<code>U</code>集合所有顶点的边集中，遍历到(F, G)的权值最小，故将G加入到顶点集合<code>U</code>中</p>
+<p>U={A,B,F,E,D,C,G},V−U={} , 此时 U=V</p>
+<p>此时，最小生成树构造完成，其顶点依次为<code>A, B, F, E, D, C, G</code></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXVER 10</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">char</span> VertexType;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    VertexType vexs[MAXVER];</span><br><span class="line">    <span class="keyword">int</span> arc[MAXVER][MAXVER];</span><br><span class="line">    <span class="keyword">int</span> numVertexes, numEdges;</span><br><span class="line">&#125;MGraph;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MiniSpanTree_Prim</span><span class="params">(MGraph G)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> min, i, j, k;  <span class="comment">// min 为当前权值最小值</span></span><br><span class="line">    <span class="keyword">int</span> lowcost[MAXVEX];  <span class="comment">/* 保存顶点间边的权值 */</span></span><br><span class="line">    <span class="keyword">int</span> adjvex[MAXVEX];   <span class="comment">/* 保存相关顶点的下标，即下标与其值所连边为当前最小权值边 */</span></span><br><span class="line">    lowcost[<span class="number">0</span>] = <span class="number">0</span>;  <span class="comment">/* 选取第一个顶点为起始点， 即 v0 加入树， lowcost的值为0，在这里就是此下标的顶点已经加入生成树 */</span></span><br><span class="line">    adjvex[<span class="number">0</span>] = <span class="number">0</span>;   <span class="comment">/* 初始化第一个顶点下标为0 */</span></span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; G.numVertexes; i++)  <span class="comment">/* 循环除下标为 0 外的全部顶点 */</span></span><br><span class="line">    &#123;</span><br><span class="line">        lowcost[i] = G.arc[<span class="number">0</span>][i];  <span class="comment">/* 将与 v0 顶点有边的权值存入数组 */</span></span><br><span class="line">        adjvex[i] = <span class="number">0</span>;  <span class="comment">/* 将其他所有顶点的值初始化为 v0 的下标 */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; G.numVertexes; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min = INF;   <span class="comment">/* 初始化最小权值为 无穷大 */</span></span><br><span class="line">        j = <span class="number">1</span>, k = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(j &lt; G.numVertexes)  <span class="comment">/* 循环全部顶点，寻找当前最小生成树顶点集合中最小权值的边 */</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(lowcost[j] != <span class="number">0</span> &amp;&amp; lowcost[j] &lt; min)  <span class="comment">/* 如果权值不为 0(即不在树中), 且权值小于 min */</span></span><br><span class="line">            &#123;</span><br><span class="line">                min = lowcost[j];  <span class="comment">/* 则让当前权值成为最小值 */</span></span><br><span class="line">                k = j;             <span class="comment">/* 将当前最小值的下标存入k */</span></span><br><span class="line">            &#125;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        lowcost[k] = <span class="number">0</span>;  <span class="comment">/* 将当前顶点的权值设置为0, 表示此顶点已加入树的顶点集合 */</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"(%d, %d)"</span>, adjvex[k], k);  <span class="comment">/* 打印当前顶点边中权值最小的边 */</span></span><br><span class="line">        <span class="keyword">for</span>(j = <span class="number">1</span>; j &lt; G.numVertexes; j++)  <span class="comment">/* 循环所有顶点 */</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">/* 如果下标为 k 的顶点边集中权值小于已存在的权值, 比如 (v0, v6)权值为INF, 而(v1, v6)权值为 16， 更新*/</span></span><br><span class="line">            <span class="keyword">if</span>(lowcost[j] != <span class="number">0</span> &amp;&amp; G.arc[k][j] &lt; lowcost[j])</span><br><span class="line">            &#123;</span><br><span class="line">                lowcost[j] = G.arc[k][j];  <span class="comment">/* 将较小的权值存入 lowcost 相应位置 */</span></span><br><span class="line">                adjvex[j] = k;   <span class="comment">/* 将下标为 k 的顶点存入 adjvex */</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -605,7 +640,7 @@
   <p><span>本文标题:</span><a href="/2019/08/04/Prim.html">Prim</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
   <p><span>发布时间:</span>2019年08月04日 - 14:52</p>
-  <p><span>最后更新:</span>2019年08月04日 - 15:17</p>
+  <p><span>最后更新:</span>2019年08月11日 - 00:03</p>
   <p><span>原始链接:</span><a href="/2019/08/04/Prim.html" title="Prim">https://yuanfang.tech/2019/08/04/Prim.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/08/04/Prim.html" aria-label="复制成功！"></i></span>
   </p>
@@ -856,7 +891,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prim算法"><span class="nav-number">1.</span> <span class="nav-text">Prim算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prim算法"><span class="nav-number">1.</span> <span class="nav-text">Prim算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本思想"><span class="nav-number">2.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解"><span class="nav-number">3.</span> <span class="nav-text">图解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
