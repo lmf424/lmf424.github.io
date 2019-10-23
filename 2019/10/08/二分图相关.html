@@ -164,18 +164,17 @@
 
 
 
-  <meta name="description" content="poj1287，最小生成树模板题">
-<meta name="keywords" content="kuangbin,poj,prim">
+  <meta name="description" content="二分图相关的一些概念与算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="poj1287">
-<meta property="og:url" content="https://yuanfang.tech/2019/08/12/poj1287.html">
+<meta property="og:title" content="二分图相关">
+<meta property="og:url" content="https://yuanfang.tech/2019/10/08/二分图相关.html">
 <meta property="og:site_name" content="远芳">
-<meta property="og:description" content="poj1287，最小生成树模板题">
+<meta property="og:description" content="二分图相关的一些概念与算法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-12T07:16:05.322Z">
+<meta property="og:updated_time" content="2019-10-07T23:35:48.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="poj1287">
-<meta name="twitter:description" content="poj1287，最小生成树模板题">
+<meta name="twitter:title" content="二分图相关">
+<meta name="twitter:description" content="二分图相关的一些概念与算法">
 
 
 
@@ -184,7 +183,7 @@
 
 
 
-  <link rel="canonical" href="https://yuanfang.tech/2019/08/12/poj1287.html">
+  <link rel="canonical" href="https://yuanfang.tech/2019/10/08/二分图相关.html">
 
 
 
@@ -194,7 +193,7 @@
   };
 </script>
 
-  <title>poj1287 | 远芳</title>
+  <title>二分图相关 | 远芳</title>
   
 
 
@@ -445,7 +444,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/08/12/poj1287.html">
+    <link itemprop="mainEntityOfPage" href="https://yuanfang.tech/2019/10/08/二分图相关.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mengfei Liu">
@@ -462,7 +461,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">poj1287
+          <h1 class="post-title" itemprop="name headline">二分图相关
               
             
           </h1>
@@ -487,7 +486,7 @@
                 
               
 
-              <time title="创建时间：2019-08-12 15:14:10 / 修改时间：15:16:05" itemprop="dateCreated datePublished" datetime="2019-08-12T15:14:10+08:00">2019-08-12</time>
+              <time title="创建时间：2019-10-08 07:33:40 / 修改时间：07:35:48" itemprop="dateCreated datePublished" datetime="2019-10-08T07:33:40+08:00">2019-10-08</time>
             
 
             
@@ -498,24 +497,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/poj/" itemprop="url" rel="index"><span itemprop="name">poj</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -524,8 +505,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/12/poj1287.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/08/12/poj1287.html" itemprop="commentCount"></span>
+                <a href="/2019/10/08/二分图相关.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/二分图相关.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -533,7 +514,7 @@
 
           
           
-             <span id="/2019/08/12/poj1287.html" class="leancloud_visitors" data-flag-title="poj1287">
+             <span id="/2019/10/08/二分图相关.html" class="leancloud_visitors" data-flag-title="二分图相关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -564,14 +545,33 @@
       
 
       
-        <p></p><p class="description"></p><br>poj1287，最小生成树模板题<p></p>
-<a id="more"></a>
-<h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a href="http://poj.org/problem?id=1287" target="_blank" rel="noopener">http://poj.org/problem?id=1287</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>n个点m条边</p>
-<p>m行a到b的距离</p>
-<p>求最小生成树大小</p>
-<h2 id="细节"><a href="#细节" class="headerlink" title="细节"></a>细节</h2><p>= =水</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0xfffffff</span>;</span><br><span class="line"><span class="keyword">int</span> e[<span class="number">60</span>][<span class="number">60</span>];</span><br><span class="line"><span class="keyword">int</span> lowcost[<span class="number">60</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">prim</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	lowcost[i]=e[<span class="number">1</span>][i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j,min=inf,temp;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(lowcost[j]!=<span class="number">0</span>&amp;&amp;lowcost[j]&lt;min)</span><br><span class="line">			&#123;</span><br><span class="line">				min=lowcost[j];</span><br><span class="line">				temp=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		ans=ans+lowcost[temp];</span><br><span class="line">		lowcost[temp]=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(e[temp][j]&lt;lowcost[j])</span><br><span class="line">			&#123;</span><br><span class="line">				lowcost[j]=e[temp][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n==<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;m);</span><br><span class="line">		<span class="keyword">int</span> i,j;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;=n;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				e[i][j]=inf;</span><br><span class="line">				<span class="keyword">if</span>(i==j)e[i][j]=<span class="number">0</span>;	</span><br><span class="line">			&#125;	</span><br><span class="line">		<span class="keyword">int</span> a,b,c;</span><br><span class="line">		<span class="keyword">while</span>(m--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">			<span class="keyword">if</span>(c&lt;e[a][b])</span><br><span class="line">			&#123;</span><br><span class="line">				e[a][b]=c;</span><br><span class="line">				e[b][a]=c;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,prim());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p class="description"></p>
+
+<h2 id="二分图相关的一些概念与算法"><a href="#二分图相关的一些概念与算法" class="headerlink" title="二分图相关的一些概念与算法"></a>二分图相关的一些概念与算法</h2><a id="more"></a>
+<h2 id="二分图匹配"><a href="#二分图匹配" class="headerlink" title="二分图匹配"></a>二分图匹配</h2><p><strong>二分图</strong>：有这样一个图，其顶点可刚好分为两集合X,Y,所有的边关联的两顶点中，恰巧其中一个属于X,另一个属于Y。同一集合的结点不相连。如果一图是二分图，那么它一定没有奇环（点数为奇数的环）。</p>
+<p>如果一图没有奇环的话，那么它可以是二分图。</p>
+<p><strong>二分图的判定</strong>：</p>
+<p>染色法：假设dfs初始点为黑色，与他相邻的点就涂白色。如果搜到某一点u的相邻点v已经涂色并且与u同色，就不可能是二分图。</p>
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><p>匹配：给定一个二分图G，在G的一个子图M中，M的边集E中任意两条边都不依附于同一个顶点，则称M是一个匹配。</p>
+<p>最大匹配：包含边数最多的匹配。</p>
+<p>完美匹配（完备匹配）：所有的点都在匹配边上的匹配。</p>
+<p>最佳匹配：如果G为加权二分图。则权值和最大的完备匹配成为最佳匹配。</p>
+<p>交替路：从一个未匹配点出发，一次经过非匹配边，匹配边，非匹配边……形成的路径叫交替路。</p>
+<p>增广路：从一个未匹配点出发，走交替路，如果途径另一个未匹配的点（出发点不算），则这条交替路称为增广路（agumenting path）。</p>
+<h3 id="二分图最小顶点覆盖"><a href="#二分图最小顶点覆盖" class="headerlink" title="二分图最小顶点覆盖"></a>二分图最小顶点覆盖</h3><p>是指最少的顶点数使得二分图G中的每条边都至少与其中一个点相连</p>
+<p><strong>二分图的最小顶点覆盖数=二分图的最大匹配数</strong></p>
+<h3 id="有向无环图最小不相交路径覆盖"><a href="#有向无环图最小不相交路径覆盖" class="headerlink" title="有向无环图最小不相交路径覆盖"></a>有向无环图最小不相交路径覆盖</h3><p>也称为最小边覆盖，是指用尽量少的顶点不相交的简单路径覆盖二分图中的所有顶点</p>
+<p>路径长度可以为0</p>
+<p>二分图的最小路径覆盖数=|V|-二分图的最大匹配数</p>
+<p>*最小可相交路径覆盖</p>
+<h3 id="二分图最大独立集"><a href="#二分图最大独立集" class="headerlink" title="二分图最大独立集"></a>二分图最大独立集</h3><p>最大独立集是指寻找一个点集，是的其中任意两点在图中无对应边。</p>
+<p>对于一般图来说，最大独立集是一个NP完全问题，对于二分图来说最大独立集=|V|-二分图的最大匹配数</p>
+<h2 id="二分图最大匹配"><a href="#二分图最大匹配" class="headerlink" title="二分图最大匹配"></a>二分图最大匹配</h2><p>匈牙利算法：O（V*E）</p>
+<p>HK算法：O（sqrt(n)*E）</p>
+<p>网络流最大流</p>
+<h2 id="二分图多重匹配（某些点可以被匹配多次）"><a href="#二分图多重匹配（某些点可以被匹配多次）" class="headerlink" title="二分图多重匹配（某些点可以被匹配多次）"></a>二分图多重匹配（某些点可以被匹配多次）</h2><p>网络流最大流</p>
+<h2 id="二分图最佳匹配"><a href="#二分图最佳匹配" class="headerlink" title="二分图最佳匹配"></a>二分图最佳匹配</h2><p>KM算法（优化版本O（n^3））</p>
+<p>网络流最大流</p>
 <hr>
 
       
@@ -602,12 +602,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/08/12/poj1287.html">poj1287</a></p>
+  <p><span>本文标题:</span><a href="/2019/10/08/二分图相关.html">二分图相关</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Mengfei Liu 的个人博客">Mengfei Liu</a></p>
-  <p><span>发布时间:</span>2019年08月12日 - 15:14</p>
-  <p><span>最后更新:</span>2019年08月12日 - 15:16</p>
-  <p><span>原始链接:</span><a href="/2019/08/12/poj1287.html" title="poj1287">https://yuanfang.tech/2019/08/12/poj1287.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/08/12/poj1287.html" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年10月08日 - 07:33</p>
+  <p><span>最后更新:</span>2019年10月08日 - 07:35</p>
+  <p><span>原始链接:</span><a href="/2019/10/08/二分图相关.html" title="二分图相关">https://yuanfang.tech/2019/10/08/二分图相关.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://yuanfang.tech/2019/10/08/二分图相关.html" aria-label="复制成功！"></i></span>
   </p>
 </div>
 <script> 
@@ -637,16 +637,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/kuangbin/" rel="tag"><i class="fa fa-tag"></i>kuangbin</a>
-          
-            <a href="/tags/poj/" rel="tag"><i class="fa fa-tag"></i>poj</a>
-          
-            <a href="/tags/prim/" rel="tag"><i class="fa fa-tag"></i>prim</a>
-          
-        </div>
-      
 
       
       
@@ -656,18 +646,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/12/poj2031.html" rel="prev" title="poj2031">
-                 <i class="fa fa-chevron-left"></i> poj2031
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/11/poj1251.html" rel="next" title="poj1251">
-                poj1251 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/08/poj3041.html" rel="next" title="poj3041">
+                poj3041 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -904,7 +890,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目链接"><span class="nav-number">1.</span> <span class="nav-text">题目链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">2.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#细节"><span class="nav-number">3.</span> <span class="nav-text">细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图相关的一些概念与算法"><span class="nav-number">1.</span> <span class="nav-text">二分图相关的一些概念与算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图匹配"><span class="nav-number">2.</span> <span class="nav-text">二分图匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关概念"><span class="nav-number">3.</span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二分图最小顶点覆盖"><span class="nav-number">3.1.</span> <span class="nav-text">二分图最小顶点覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有向无环图最小不相交路径覆盖"><span class="nav-number">3.2.</span> <span class="nav-text">有向无环图最小不相交路径覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分图最大独立集"><span class="nav-number">3.3.</span> <span class="nav-text">二分图最大独立集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图最大匹配"><span class="nav-number">4.</span> <span class="nav-text">二分图最大匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图多重匹配（某些点可以被匹配多次）"><span class="nav-number">5.</span> <span class="nav-text">二分图多重匹配（某些点可以被匹配多次）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分图最佳匹配"><span class="nav-number">6.</span> <span class="nav-text">二分图最佳匹配</span></a></li></ol></div>
             
 
           </div>
